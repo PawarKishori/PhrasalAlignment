@@ -1,0 +1,11 @@
+
+
+1. Do projection of relations from english to hindi if and only if
+   a. All words eng and hindi words are aligned properly. (Unaligned words ==0)
+   b. sentences without Conjunction relation
+   c. sentences without prepositional attachment
+   
+2. If the relation from UD-english are one-many write the rules for appropriate relation.
+
+3. Prepare dictionary for such alignments.
+   That is why - isiliy
