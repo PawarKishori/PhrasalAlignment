@@ -1,11 +1,39 @@
+Anusaaraka Task:
 
+Goal of Anusaaraka is to create word aligned parallel corpora using following resourses:
+1. Anusaaraka output
+2. Statistical Machine Translation output.
+3. Alignment of Parser output
+
+-----------------------------------------------------------------------------------------------------
+My Task:
+
+My task focuses on 3rd point.
+My goal is to automate the creation of Hindi Treebank using output of phrasal alignment tool.
+
+When the automated and correct hindi treebank is being created it can be used in the following tasks:
+1. Creation of Hindi Parser(either by graph based learning or something else)
+2. Gold Treebank created from automation and some rules.
+3. A system to create automated hindi treebank from english-hindi parallel corpora.
+------------------------------------------------------------------------------------------------------
+Algorithm for automation system:
 
 1. Do projection of relations from english to hindi if and only if
    a. All words eng and hindi words are aligned properly. (Unaligned words ==0)
    b. sentences without Conjunction relation
    c. sentences without prepositional attachment
+   d. Parse given by stanford for english sentence is correct.
    
 2. If the relation from UD-english are one-many write the rules for appropriate relation.
+   (As per the discussion with Soma mam, we can write rules for following relations )
+   a. acl
+   b. appos
+   c. nsugjpass etc.
 
-3. Prepare dictionary for such alignments.
+3. If we have one-one mapping between two relations from UD-english and UD-hindi then mapp such relations.
+   a. advmod (BI) -> dep
+
+4. Prepare dictionary for such alignments.
    That is why - isiliy
+
+
