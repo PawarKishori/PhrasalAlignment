@@ -9,31 +9,66 @@ Goal of Anusaaraka is to create word aligned parallel corpora using following re
 My Task:
 
 My task focuses on 3rd point.
-My goal is to automate the creation of Hindi Treebank using output of phrasal alignment tool.
+Which will lead to a good nth layer generation.
+One of my goals is to automate the creation of Hindi Treebank using output of phrasal alignment tool.
 
 When the automated and correct hindi treebank is being created it can be used in the following tasks:
 1. Creation of Hindi Parser(either by graph based learning or something else)
 2. Gold Treebank created from automation and some rules.
 3. A system to create automated hindi treebank from english-hindi parallel corpora.
+
 ------------------------------------------------------------------------------------------------------
 Algorithm for automation system:
 
 1. Do projection of relations from english to hindi if and only if
-   a. All words eng and hindi words are aligned properly. (Unaligned words ==0)
-   b. sentences without Conjunction relation
-   c. sentences without prepositional attachment
+   a. E-H translation is very close i.e. All words eng and hindi words are aligned properly. (Unaligned words ==0) (From the data statistically can I check this condition**)
+   b. sentences without Conjunction relation (for time being)
+   c. sentences without prepositional attachment (for time being)
    d. Parse given by stanford for english sentence is correct.
    
-2. If the relation from UD-english are one-many write the rules for appropriate relation.
-   (As per the discussion with Soma mam, we can write rules for following relations )
-   a. acl
-   b. appos
-   c. nsugjpass etc.
-
-3. If we have one-one mapping between two relations from UD-english and UD-hindi then mapp such relations.
+2. Rule Step and/or learning step
+   Do analysis and find out the rule 
+      if u can find out the rule then do 2.1:
+	2.1.
+	If the relation from UD-english are one-many write the rules forappropriate relation.
+        (As per the discussion, we can write rules for following relations )
+        a. acl
+	b. appos
+	c. nsubjpass
+	   etc.
+      else do 2.2:
+	2.2.
+        Collect the different (as many as u can) examples from the corpora and real time (from linguists), then put all the data in structured format the apply some learning technique (like GCNN or something*) and learn the rules from the data instead of learning the data (which many statistical and ml based techniques does)
+4. One to one relation mapping from english to hindi
+   a. nsubj
+   b. nmod 
+	etc.
+   
+3. If we have mapped relations(from mapped relation dictionary**) from one relation name(in english) to the relation name(in hindi) then map such relations.
    a. advmod (BI) -> dep
 
-4. Prepare dictionary for such alignments.
-   That is why - isiliy
+5. Prepare dictionary for such alignments.
+   That is why - isiliye
+
+------------------------------------------------------------------------------------------------------------
+Number of columns for observations of sentences
+
+01. English sentence
+02. Hindi Sentence
+03. Sentence id in phrasal alignment tool
+04. Algorithm Step 1 Satisfied? 
+05. number of interchunk relations in english sentence (ignore intrachunk for timebeing)
+06. number of interchunk relations in hindi sentence
+07. number of exact mapped relations (algo step 4)
+08. list of 7 (algo step 4)
+09. number of relations (algo step 3)
+10. list of relations (algo step 3)
+11. number of relations (algo step 2)
+12. list of relations (algo step 2)
+13. Rules extracted for the relation (algo step 2.1)
+14. Dictionary observations
 
 
+
+
+** work on this point
