@@ -26,7 +26,7 @@ Algorithm for automation system:
    c. sentences without prepositional attachment (for time being)
    d. Parse given by stanford for english sentence is correct.
    
-2. Rule Step and/or learning step
+4. Rule Step and/or learning step
    Do analysis and find out the rule 
       if u can find out the rule then do 2.1:
 	2.1.
@@ -39,14 +39,14 @@ Algorithm for automation system:
       else do 2.2:
 	2.2.
         Collect the different (as many as u can) examples from the corpora and real time (from linguists), then put all the data in structured format the apply some learning technique (like GCNN or something*) and learn the rules from the data instead of learning the data (which many statistical and ml based techniques does)
-4. One to one relation mapping from english to hindi
+2. One to one relation mapping from english to hindi
    a. nsubj
    b. nmod 
 	etc.
    
 3. If we have mapped relations(from mapped relation dictionary**) from one relation name(in english) to the relation name(in hindi) then map such relations.
    a. advmod (BI) -> dep
-
+																																																		
 5. Prepare dictionary for such alignments.
    That is why - isiliye
 
