@@ -1,27 +1,50 @@
 Changes in Revised for the Stanford Parser v. 3.7.0 in September 2016
 ----------------------------------------------------------------------------------------------------
-
 abbrev was removed as a relation. It is now a particular case of an appos.
-
+not present
 
 attr has been removed as a relation. attr was a relation intended for the complement of a copular verb such as “to be”, “to seem”, “to appear”. Mainly, it was used for WHNP complements. (The relation attr was meant to stand for “attributive” but that was arguably a misuse of the word.)
-
+not present
 
 complm was removed as a relation. It is now a particular case of mark. This follows HPSG-like usage, where the complementizer is a mark on the clause.
-
+not present
 
 discourse was introduced. The lack of a dependency type for interjections was an omission even in the early versions, but it became more essential as we expanded our consideration of informal text types.
-
 
 goeswith was introduced. It is useful on badly edited text.
 
 infmod was remode as a relation. It has been generalized as a case of vmod.
-
+done
 partmod was remode as a relation. It has been generalized as a case of vmod.
-
+done
 purpcl was removed as a relation. It is now a particular case of an advcl.
+hv to do this time
 
 rel has been removed as a relation. rel was the relation between the main verb of a relative clause and the head of the Wh-phrase. Now, the converter resolves the grammatical relation (nsubj, dobj, or pobj) for simple cases, and the rest are left unresolved as a dep relation.
-
+not present
 
 vmod has been introduced as a relation generalizing over non-finite verbal modifiers that are participial in form (formerly partmod) or infinitival (formerly infmod).
+done
+----------------------------------------------------------------
+Reference - Stanford typed dependencies manual
+Changes in the dependencies from stanford 3.5.2 to 3.7.0:
+
+removed relations:
+abbrev,attr,complm,rel, infmod, partmod, purpcl
+
+inserted relation:
+goeswith, vmod,discourse
+
+Changes to do in sd_relation_rules.clp for removed relations:
+abbrev-appos
+attr - 
+complm - mark
+infmod - vmod
+partmod - vmod
+purpcl - advcl
+rel - nsubj/dobj/pobj/dep
+
+For newly inserted relations we need to discuss and insert it in the sd_relation_rules.clp
+
+---------------------------------------------------------------------------
+
