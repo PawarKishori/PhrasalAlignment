@@ -72,3 +72,19 @@ Number of columns for observations of sentences
 
 
 ** work on this point
+-------------------------------------------------------------------------------------------------
+Update: 2-Dec-2017 : Meeting with Chaitanya Sir and Soma mam.
+My ultimate aim is to improve parsers output, both Hindi and English.
+So I need to create a better hindi parser too.
+How I can do that? - Using Alignment tool developed which uses bootstrapping.
+Alignment tool needs output of hindi and english parser. English  parser performs better than hindi parser. So primarily I need to focus on hindi parser first.
+Alignment tool needs hindi parser to parse hindi sentences. Till now I was using hindi rule based parser developed by Roja mam. It's latest version was giving multiple relations which I cant use in alignment tool, and it was not that efficient too. So we decided to use Irshad's parser (simple neural network - 90% accuracy claimed) https://bitbucket.org/iscnlp/ which was trained on Hindi Treebank.
+hindi_irshad.txt is output of this NNparser ran on hindi_raw.txt
+The parser gives output in UD dep relations as well as paninian dep relations.
+Sir claim that Paninian dep relations of irshad and us differ at some places.
+Todays task - checking the accuracy of irshad's hindi parser (manually, with sir's paninian concept) and checking whether we can use that hindi parser into alignment tool for further bootstrapping.
+hindi_irshad.txt    => wrongly annotated dep relations
+                    *  Discussion required
+
+-------------------------------------------------------------------------------------------------
+
