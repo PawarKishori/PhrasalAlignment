@@ -87,4 +87,16 @@ hindi_irshad.txt    => wrongly annotated dep relations
                     *  Discussion required
 
 -------------------------------------------------------------------------------------------------
+3-dec-2017
+Gathering of interchunk and intrachunk paninian dependencies from Pruthwik, Dipti mam
+------------------------------------------------------------------------------------------------- 
+4-dec-2017 
+Error checking of parser output according to guidelines provided.
+-------------------------------------------------------------------------------------------------
+6-dec-2017
+code to convert parser output to convinient reading format
+-------------------------------------------------------------------------------------------------7
+7-dec-2017
+Earlier I ran it on training data(might be not sure ), so need to run the parser on new test data. I am running it on Gyan-Nidhi_en_hi_anoop corpus (500 sentences)
+Task: Divide output into set of 10 sentences, analyse 10 sentences each.
 

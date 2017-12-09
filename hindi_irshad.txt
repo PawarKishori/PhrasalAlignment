@@ -1,9 +1,9 @@
 1	सप्तपुरियों	सप्तपुरियों	NN	NN	_	3	r6	_	_
 2	के	के	PSP	PSP	_	1	lwg__psp	_	_
-3	दर्शन	दर्शन	NN	NN	_	5	k5=>k3	_	_
+3	दर्शन	दर्शन	NN	NN	_	5	k5	_	_
 4	से	से	PSP	PSP	_	3	lwg__psp	_	_
 5	मिलता	मिलता	VM	VM	_	0	main	_	_
-6	है	है	VAUX	VAUX	_	5	lwg__vaux*	_	_
+6	है	है	VAUX	VAUX	_	5	lwg__vaux	_	_
 7	मोक्ष	मोक्ष	NNC	NNC	_	5	k1	_	_
 8	!	!	SYM	SYM	_	5	rsym	_	_
 
@@ -63,10 +63,10 @@
 8	इन	इन	DEM	DEM	_	9	nmod__adj	_	_
 9	सप्तपुरियों	सप्तपुरियों	NN	NN	_	11	r6	_	_
 10	का	का	PSP	PSP	_	9	lwg__psp	_	_
-11	दर्शन	दर्शन	NN	NN	_	16	pof=>	_	_
+11	दर्शन	दर्शन	NN	NN	_	16	pof	_	_
 12	मोक्ष	मोक्ष	NN	NN	_	14	k2	_	_
 13	प्रदान	प्रदान	NN	NN	_	14	pof	_	_
-14	करने	करने	VM	VM	_	16	k1s=>	_	_
+14	करने	करने	VM	VM	_	16	k1s	_	_
 15	वाला	वाला	PSP	PSP	_	14	lwg__psp	_	_
 16	होता	होता	VM	VM	_	5	ccof	_	_
 17	है	है	VAUX	VAUX	_	16	lwg__vaux	_	_
@@ -75,20 +75,20 @@
 1	इसका	इसका	PRP	PRP	_	2	r6	_	_
 2	नाम	नाम	NN	NN	_	7	k1	_	_
 3	बनारस	बनारस	NNP	NNP	_	4	ccof	_	_
-4	या	या	CC	CC	_	7	k7p=>k1s	_	_
+4	या	या	CC	CC	_	7	k7p	_	_
 5	वाराणसी	वाराणसी	NNP	NNP	_	4	ccof	_	_
 6	भी	भी	RP	RP	_	5	lwg__rp	_	_
 7	है	है	VM	VM	_	0	main	_	_
 8	.	.	SYM	SYM	_	7	rsym	_	_
 
 1	गंगा	गंगा	NNP	NNP	_	2	nmod__adj	_	_
-2	किनारे	किनारे	NN	NN	_	9	k1=>k7p	_	_
-3	यह	यह	PRP	PRP	_	9=>5	k1=>adj	_	_
-4	भगवान	भगवान	NNC	NNC	_	5=>5	pof__cn=>adj	_	_
+2	किनारे	किनारे	NN	NN	_	9	k1	_	_
+3	यह	यह	PRP	PRP	_	9	k1	_	_
+4	भगवान	भगवान	NNC	NNC	_	5	pof__cn	_	_
 5	शंकर	शंकर	NNP	NNP	_	8	r6	_	_
 6	की	की	PSP	PSP	_	5	lwg__psp	_	_
 7	प्रसिद्ध	प्रसिद्ध	JJ	JJ	_	8	nmod__adj	_	_
-8	पुरी	पुरी	NN	NN	_	9	k1s=>k1	_	_
+8	पुरी	पुरी	NN	NN	_	9	k1s	_	_
 9	है	है	VM	VM	_	0	main	_	_
 10	.	.	SYM	SYM	_	9	rsym	_	_
 
@@ -96,26 +96,26 @@
 2	सराय	सराय	NNP	NNP	_	7	k5	_	_
 3	से	से	PSP	PSP	_	2	lwg__psp	_	_
 4	अमृतसर	अमृतसर	NNP	NNP	_	5	ccof	_	_
-5	तथा	तथा	CC	CC	_	7	k7p=>k2p	_	_
+5	तथा	तथा	CC	CC	_	7	k7p	_	_
 6	देहरादून	देहरादून	NNP	NNP	_	5	ccof	_	_
 7	जाने	जाने	VM	VM	_	11	nmod	_	_
 8	वाली	वाली	PSP	PSP	_	7	lwg__psp	_	_
 9	मुख्य	मुख्य	JJ	JJ	_	11	nmod__adj	_	_
 10	रेलवे	रेलवे	NNC	NNC	_	11	pof__cn	_	_
-11	लाइन	लाइन	NN	NN	_	0	k7=>k7p	_	_
+11	लाइन	लाइन	NN	NN	_	0	k7	_	_
 12	पर	पर	PSP	PSP	_	11	lwg__psp	_	_
 13	मुगल	मुगल	NNPC	NNPC	_	14	pof__cn	_	_
 14	सराय	सराय	NNP	NNP	_	15	nmod__adj	_	_
 15	स्टेशन	स्टेशन	NN	NN	_	0	k5	_	_
 16	से	से	PSP	PSP	_	15	lwg__psp	_	_
 17	7	7	QC	QC	_	18	nmod__adj	_	_
-18	मील	मील	NN	NN	_	0	k7*	_	_
+18	मील	मील	NN	NN	_	0	k7	_	_
 19	पर	पर	PSP	PSP	_	18	lwg__psp	_	_
 20	काशी	काशी	NNP	NNP	_	21	ccof	_	_
 21	और	और	CC	CC	_	0	main	_	_
-22	उससे	उससे	PRP	PRP	_	29	rh=>k5	_	_
+22	उससे	उससे	PRP	PRP	_	29	rh	_	_
 23	4	4	QC	QC	_	24	nmod__adj	_	_
-24	मील	मील	NN	NN	_	29	k7p*	_	_
+24	मील	मील	NN	NN	_	29	k7p	_	_
 25	आगे	आगे	NST	NST	_	24	lwg__psp	_	_
 26	बनारस	बनारस	NNP	NNP	_	28	nmod__adj	_	_
 27	छावनी	छावनी	NNC	NNC	_	28	pof__cn	_	_
@@ -136,7 +136,7 @@
 11	होते	होते	VM	VM	_	16	vmod	_	_
 12	हुए	हुए	VAUX	VAUX	_	11	lwg__vaux	_	_
 13	बनारस	बनारस	NNP	NNP	_	14	nmod__adj	_	_
-14	छावनी	छावनी	NN	NN	_	16	k7p=>k2p	_	_
+14	छावनी	छावनी	NN	NN	_	16	k7p	_	_
 15	तक	तक	PSP	PSP	_	14	lwg__psp	_	_
 16	जाती	जाती	VM	VM	_	0	main	_	_
 17	है	है	VAUX	VAUX	_	16	lwg__vaux	_	_
@@ -146,10 +146,10 @@
 2	रेलवे	रेलवे	NN	NN	_	5	r6	_	_
 3	की	की	PSP	PSP	_	2	lwg__psp	_	_
 4	एक	एक	QC	QC	_	5	nmod__adj	_	_
-5	लाइन	लाइन	NN	NN	_	6=>15	nmod=>k1	_	_
+5	लाइन	लाइन	NN	NN	_	6	nmod	_	_
 6	भटनी	भटनी	NNP	NNP	_	8	ccof	_	_
 7	से	से	PSP	PSP	_	6	lwg__psp	_	_
-8	तथा	तथा	CC	CC	_	15	k7p=>k1/k5	_	_
+8	तथा	तथा	CC	CC	_	15	k7p	_	_
 9	दूसरी	दूसरी	QO	QO	_	10	nmod__adj	_	_
 10	छपरा	छपरा	NNP	NNP	_	8	ccof	_	_
 11	से	से	PSP	PSP	_	10	lwg__psp	_	_
@@ -161,11 +161,11 @@
 17	.	.	SYM	SYM	_	15	rsym	_	_
 
 1	इस	इस	DEM	DEM	_	2	nmod__adj	_	_
-2	रास्ते	रास्ते	NN	NN	_	7	k5=>k3*	_	_
+2	रास्ते	रास्ते	NN	NN	_	7	k5	_	_
 3	से	से	PSP	PSP	_	2	lwg__psp	_	_
 4	भी	भी	RP	RP	_	2	lwg__rp	_	_
 5	बनारस	बनारस	NNP	NNP	_	6	nmod__adj	_	_
-6	सिटी	सिटी	NN	NN	_	7	k1=>k2p	_	_
+6	सिटी	सिटी	NN	NN	_	7	k1	_	_
 7	होते	होते	VM	VM	_	10	vmod	_	_
 8	हुए	हुए	VAUX	VAUX	_	7	lwg__vaux	_	_
 9	छावनी	छावनी	NN	NN	_	10	k2p	_	_
@@ -175,8 +175,8 @@
 13	.	.	SYM	SYM	_	10	rsym	_	_
 
 1	पतित	पतित	JJ	JJ	_	2	nmod__adj	_	_
-2	पावनी	पावनी	NNP	NNP	_	14=>3	k1=>nmod	_	_
-3	गंगा	गंगा	NNP	NNP	_	4=>14	nmod__adj=>k1	_	_
+2	पावनी	पावनी	NNP	NNP	_	14	k1	_	_
+3	गंगा	गंगा	NNP	NNP	_	4	nmod__adj	_	_
 4	हरिद्वार	हरिद्वार	NNP	NNP	_	9	k7p	_	_
 5	में	में	PSP	PSP	_	4	lwg__psp	_	_
 6	पर्वतीय	पर्वतीय	JJ	JJ	_	7	nmod__adj	_	_
@@ -184,7 +184,7 @@
 8	को	को	PSP	PSP	_	7	lwg__psp	_	_
 9	छोड़कर	छोड़कर	VM	VM	_	14	vmod	_	_
 10	समतल	समतल	JJ	JJ	_	11	nmod__adj	_	_
-11	भूमि	भूमि	NN	NN	_	14	k7p=>k2p	_	_
+11	भूमि	भूमि	NN	NN	_	14	k7p	_	_
 12	में	में	PSP	PSP	_	11	lwg__psp	_	_
 13	प्रवेश	प्रवेश	NN	NN	_	14	pof	_	_
 14	करती	करती	VM	VM	_	0	main	_	_
