@@ -105,4 +105,42 @@ The hindi parser output is not totally accurate but we can use it in Phrsal Alig
 -------------------------------------------------------------------------------------------------7
 9-dec-2017
 Creation of (Dipti mam's) Paninian to (Anusaaraka's)Paninian mapping. And add one more layer to Phrasal alignment tool which will use Irshad's NN parser and show hindi parser output aligned with English.
+---------------------------------------------------------------------------------------------------
+11-dec-2017
+ 
+ sh run.sh <phrase-table-en-hi> <phrase-table-hi-en> <corpus_name>
+ sh run.sh phrases_en-hi  phrases_hi-en  physics
+ sh run.sh gyan_nidhi_en_hi_wx gyan_nidhi_hi_en_wx gyan_nidhi
+
+This command takes the phrase table of the corpus created by Phrasal tool and changes this phrase output into dictionary gdbm format.
+The gdbm output(gyan_nidhi_en_hi_wx, gyan_nidhi_hi_en_wx) will be saved in /anusaaraka/miscellaneous/SMT/phrasal_alignment
+
+To run Alignment tool on parallel corpus, input is parallel chunks of sentences given parallel corpus. These are obtained by training parallel corpus on a statistical tool - Phrsal tool. So on 30k gyan nidhi parallel sentences, Phrasal is ran and we got gyan_nidhi_en_hi_wx and gyan_nidhi_hi_en_wx. These are phrase tables we obtatined, which are stored in gyan_nighi folder 
+
+sh run_alignment.sh e1 h1 gyan_nidhi
+This command is used to run alignment tool on parallel corpus e1 and h1, which also uses gyan_nidhi dictionary (gdbm- created by above run.sh command)
+
+After that we need to do compilation steps to run alignment data.
+
+*****
+Giving error
+
+Debugging:
+/anusaaraka$ git diff --namestatus
+error: invalid option: --namestatus
+master@kishori-ThinkCentre-E73:~/anusaaraka$ git diff --name-status
+M       multifast-v1.4.2/src/phrasal_mwe/extract_hindi_key.c
+M       multifast-v1.4.2/src/phrasal_mwe/extract_key-hi-en.c
+M       multifast-v1.4.2/src/phrasal_mwe/extract_key.c
+
+git checkout all these 3 files 
+++ 
+Did some changes in run_alignment.sh // which was not committed
+******
+After successfully running phrasal alignment output will be generated in following dir with filename_eng_slign.html file
+firefox /home/master/anu_output/e1_eng_align.html 
+
+The backend files of phrasal alignment will be in : 
+cd /home/master/tmp_anu_dir/tmp/gyan_nidhi_e500_tmp/
+
 
