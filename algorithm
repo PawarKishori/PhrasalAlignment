@@ -142,5 +142,8 @@ firefox /home/master/anu_output/e1_eng_align.html
 
 The backend files of phrasal alignment will be in : 
 cd /home/master/tmp_anu_dir/tmp/gyan_nidhi_e500_tmp/
-
+-----------------------------------------------------------------------------------------------
+12-dec
+program to convert parser output into facts format
+mapping of UD tagging, Enhanced UD tagging, Sukhada Paninian notation, Dipti Paninian Notation
 
