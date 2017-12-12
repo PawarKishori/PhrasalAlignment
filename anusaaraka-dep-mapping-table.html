@@ -1,0 +1,608 @@
+
+<!-- saved from url=(0084)file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body lang="en-US" dir="LTR">
+
+	 <link href="./anusaaraka-dep-mapping-table_files/style.css" type="text/css" rel="stylesheet">
+<table border="1" cellpadding="0.5" cellspacing="0.5" style="page-break-before: always">
+        <thead>
+                <tr valign="bottom">
+                </tr>
+        </thead><tbody><tr> 
+	<td> Relation Name</td> 
+	<td> Example Sentence</td> 
+	<td> Stanford Dependencies</td> 
+	<td> CLEAR Dependencies</td> 
+	<td> Paninian Dependencies</td> 
+	<td> Remarks
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Subject Related Labels
+</td> </tr>
+<tr> 
+	<td> agent</td> 
+	<td> The car was bought by John.</td> 
+	<td> agent(bought John)</td> 
+	<td> agent(bought by), pobj(by John)</td> 
+	<td> <b>(kriyA-by_saMbanXI  bought John)</b></td> 
+	<td> All schemes treat it differently.
+</td> </tr>
+<tr> 
+	<td> csubj (clausal subject)</td> 
+	<td> What I said was true.</td> 
+	<td> csubj(true said)</td> 
+	<td> csubj(was said)</td> 
+	<td> (kriyA-vAkya_subject was said)</td> 
+	<td> <a id="tip-1"> When the subject of a verb is itself a clause the relation kriyA-vAkya_subject is used. Since verbs are taken to be the central point of a clause, the dependent of this relation is the verb of the subject clause. </a>
+</td> </tr>
+<tr> 
+	<td> csubjpass (clausal passive subject)</td> 
+	<td> That she lied was suspected by everyone.</td> 
+	<td> csubjpass(suspected lied)</td> 
+	<td> ND (no difference)</td> 
+	<td> (kriyA-vAkya_subject suspected lied)</td> 
+	<td> See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#tip-1"> kriyA-vAkya_subject </a>
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> expl (expletive)</td> 
+	<td> There was an explosion.</td> 
+	<td> expl(was There)</td> 
+	<td> ND</td> 
+	<td> (kriyA-dummy_subject was There)</td> 
+	<td> In our scheme, for something to be the subject of a verb it has to be expressed (aBihiwa) by the verb. In English it is seen through agreement. In a sentence where subject is not being expressed by the verb but still it comes at the subject in the sentence, we call it dummy_subject.
+</td> </tr>
+<tr> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> nsubj (nominal subject)</td> 
+	<td> I want the students to go.</td> 
+	<td> nsubj(want I)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-subject want I)</b></td> 
+	<td> <a id="subj"> The 'subject' in English corresponds to the concept of 'aBihiwa' in Sanskrit. In other words the subject is expressed by the verbal suffixes. That is why there has to be subject verb agreement for the sentence to be grammatical. </a>
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> I want the students to go.</td> 
+	<td> nsubj(go students)</td> 
+	<td> ccomp(go want)</td> 
+	<td> <b>(kriyA-anaBihiwa_subject go students)</b></td> 
+	<td> The 'subject' in English corresponds to the concept of 'aBihiwa' in Sanskrit. In other words the subject is expressed by the verbal suffixes. That is why there has to be subject verb agreement for the sentence to be grammatical. In the examples such as the one given here, the subject 'students' is not being expressed by the verbal suffix in 'go', hence we call it 'anaBihiwa_subject' (not expressed subject) of go.
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> There was a kid playing in the garden.</td> 
+	<td> nsubj(was kid)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-aBihiwa was kid)</b></td> 
+	<td> Unlike any other subject, 'there', is the grammatical subject of expletives sentences. It can be seen by the fact that it inverts with the finite auxiliary 'Was there a kid playing in the garden?'. 'There' functions as a place-holder for the logical subject, 'a kid'. In such sentences the logical subject occupies the complement position, hence instead of calling it as a normal subject, we call it 'aBihiwa_subject'.
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> I made him build the house.</td> 
+	<td> nsubj (build him)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-prayojya_karwA build him)</b></td> 
+	<td> The object of the first verb (i.e. causative verb) becomes prayojya_karwA according to Sanskrit grammar, so we have given this object a prayojya_karwA relation but we are also showing the prayojya_karwA as an object of the causative verb. e.g. "Peter made her(1) do her homework." here 'her(1)' is prayojya_karwA and is the object of 'made'.
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> I got the house built.</td> 
+	<td> nsubj(built house)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-object built house)</b></td> 
+	<td> See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#obj"> kriyA-object </a>
+</td> </tr>
+<tr> 
+	<td> nsubjpass (nominal passive subject)</td> 
+	<td> I am drawn to her.</td> 
+	<td> nsubjpass(drawn I)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-subject drawn I)</b></td> 
+	<td> See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#subj"> kriyA-subject </a>
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> I am drawn to her.</td> 
+	<td> -</td> 
+	<td> -</td> 
+	<td> <b>(kriyA-karma drawn I)</b></td> 
+	<td> Apart from kriyA-subject relation we also label this relation as "kriyA-karma" because in passive sentences the syntactic subject of the verb is actually the semantic object of the verb and it helps in translations.
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Object Related Labels
+</td> </tr>
+<tr> 
+	<td> attr (attribute)</td> 
+	<td> This product is a global brand.</td> 
+	<td> cop(is brand)</td> 
+	<td> attr(is brand)</td> 
+	<td> (subject-subject_samAnAXikaraNa product brand)</td> 
+	<td> SDs do not have this relation any more.
+</td> </tr>
+<tr> 
+	<td> dobj (direct object)</td> 
+	<td>  I read a book.</td> 
+	<td> dobj(read book)</td> 
+	<td>   dobj(read book)</td> 
+	<td> <b>(kriyA-object gave books)</b></td> 
+	<td> <a id="obj"> The direct object of a transitive verb is labeled as the object of the verb. </a>
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> She gave me these books.</td> 
+	<td> dobj(gave books)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-object_2 gave books)</b></td> 
+	<td> The direct object of a ditransitive verb is the object_2.
+</td> </tr>
+<tr> 
+	<td> iobj (indirect object)</td> 
+	<td> She gave me these books.</td> 
+	<td> iobj(gave me)</td> 
+	<td> ND</td> 
+	<td> (kriyA-object_1 gave books)</td> 
+	<td> The indirect object of a ditransitive verb is the object_1. It is the dative object which corresponds to sampraxAna kAraka.
+</td> </tr>
+<tr> 
+	<td> oprd (object predicate)</td> 
+	<td> She calls me her friend.</td> 
+	<td> nsubj(friend me)</td> 
+	<td> <b>oprd(calls friend)</b></td> 
+	<td> (object-object_samAnAXikaraNa me friend)</td> 
+	<td> Stanford parser doesn't give this label.
+</td> </tr>
+<tr> 
+	<td> cop (copula)</td> 
+	<td> The apple is red.</td> 
+	<td> cop(red is), nsubj(red apple)</td> 
+	<td> cop(red is), nsubj(is apple)</td> 
+	<td> <b>(subject-subject_samAnAXikaraNa apple red), (kriyA-subject is apple)</b></td> 
+	<td> <a id="tips"> The word 'samAna' means same, 'aXikaraNa' means locus', samAnAXikaraNa means having same locus. If the quality of the subject and that of the predicate reside in a same person, place or a thing then the relation between the subject and its predicate is marked as subject-subject_samAnAXikaraNa. In other words when two qualities reside in one/same locus (aXikaraNa) we call it samAnAXikaraNa. In our example, both <i>appleness</i> and <i>redness</i> reside in the subject so we name it subject-subject_samAnAXikaraNa </a>
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Auxiliaries
+</td> </tr>
+<tr> 
+	<td> aux (auxiliary)</td> 
+	<td> I have been seeing her.</td> 
+	<td> aux(seeing have), aux(seeing been)</td> 
+	<td> ND</td> 
+	<td> <b>No dependency label</b></td> 
+	<td> <a id="aux"> We do not show any relation among verbs and auxiliaries or model verbs. Under the concept of LWG, auxilieries and model verbs are treated as verbal suffixes. </a>
+</td> </tr>
+<tr> 
+	<td> auxpass (passive auxiliary)</td> 
+	<td> I am drawn to her.</td> 
+	<td> auxpass(drawn am)</td> 
+	<td> ND</td> 
+	<td> <b>No dependency label</b></td> 
+	<td> See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#aux"> aux </a>
+</td> </tr>
+<tr> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Complement Related Labels 
+</td> </tr>
+<tr> 
+	<td> acomp (adjectival complement)</td> 
+	<td> She looks beautiful.</td> 
+	<td> acomp(looks beautiful)</td> 
+	<td> ND</td> 
+	<td> <b>(subject-subject_samAnAXikaraNa She beautiful)</b></td> 
+	<td>  See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#tips"> subject-subject_samAnAXikaraNa</a>.
+</td> </tr>
+<tr> 
+	<td> ccomp (clausal complement)</td> 
+	<td> She said that she wanted to go.</td> 
+	<td> ccomp(said wanted)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-vAkyakarma said wanted)</b></td> 
+	<td> <a id="vAkyakarma"> When a verb takes a clause/sentence as an object we call it vAkyakarma. Here we show the relation of main verb with the verb of the embedded clause because that is the head of the embedded clause. </a>
+</td> </tr>
+<tr> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> I made him build the house.</td> 
+	<td> ccomp(made  build)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-preraka_kriyA build  made)</b></td> 
+	<td> In English, causative verbs (make, have, get etc.) loose their own meaning and add an extra meaning "to convince to do something" or "to trick someone into doing something" to other verbs, but in Hindi and other Indian languages causativisation is marked through suffixes, hence we combine the causative verbs with the main verb and mark the causative verb as preraka_kriyA. 
+</td> </tr>
+<tr> 
+	<td> xcomp (open clausal complement)</td> 
+	<td> I want to go.</td> 
+	<td> xcomp(want go)</td> 
+	<td> ND</td> 
+	<td> (kriyA-kqxanwa_karma want go)</td> 
+	<td> Any non-finite verb form is called kqxanwa. This relation connects verb with non-finite verb object.
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> He knows how to go.</td> 
+	<td> ccomp(knows go)</td> 
+	<td> xcomp(knows go)</td> 
+	<td> (kriyA-vAkyakarma  knows go)</td> 
+	<td> See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#vAkyakarma"> kriyA-vAkyakarma </a>
+</td> </tr>
+<tr> 
+	<td> whadvmod</td> 
+	<td> He knows how to go.</td> 
+	<td> advmod(go how)</td> 
+	<td> ND</td> 
+	<td> (kriyA-kriyA_viSeRaNa go how)</td> 
+	<td> See <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#kri_vi"> kriyA-kriyA_viSeRaNa </a>
+</td> </tr>
+<tr> 
+	<td> mark (marker)</td> 
+	<td> She came because she liked me.</td> 
+	<td> mark(liked because)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-vAkya_viBakwi liked because)</b></td> 
+	<td> A marker is a subordinating conjunction (e.g., although, because, while) that introduces an adverbial clause modifier.
+</td> </tr>
+<tr> 
+	<td> complm (complementizer)</td> 
+	<td> She said that she wanted to go.</td> 
+	<td> mark(wanted that)</td> 
+	<td> complm(wanted that)</td> 
+	<td> <b>(kriyA-vAkya_viBakwi wanted that)</b></td> 
+	<td> A complementizer is a subordinating conjunction, if, that, or whether, that introduces a clausal complement.
+</td> </tr>
+<tr> 
+	<td> purpcl (purpose clause modifier)</td> 
+	<td> She rose from the table to welcome me.</td> 
+	<td> -</td> 
+	<td> -</td> 
+	<td> (kriyA-kriyArWa_kriyA rose welcome)</td> 
+	<td> kriyArWa_kriyA is the verb marked with infinitival 'to'. It denotes purpose that is it connects infinitival verbs to other verbs when the 'to verb' mean "in order to". 
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Adverbial Modifier Related Labels
+</td> </tr>
+<tr> 
+	<td> advcl (adverbial clause modifier)</td> 
+	<td> The accident happened as the night was falling.</td> 
+	<td> advcl(happened falling)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-vAkya_viSeRaNa happened falling)</b></td> 
+	<td> The main verb of a clause is marked as a 'vAkya_viSeRaNa' if the clause acts as a modifier of a verb.
+</td> </tr>
+<tr> 
+	<td> advmod (adverbial modifier)</td> 
+	<td> She works carefully.</td> 
+	<td> advmod(works carefully)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-kriyA_viSeRaNa works carefully)</b></td> 
+	<td> <a id="kri_vi"> This relation connects verbs with manner adverbs. </a>
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> She works very carefully.</td> 
+	<td> advmod(carefully very)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  carefully very)</b></td> 
+	<td> Connects manner adverbs with the intensifiers that modify them.
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> She is so beautiful.</td> 
+	<td> advmod(beautiful so)</td> 
+	<td> ND</td> 
+	<td> <b>(viSeRya-viSeRaka beautiful so)</b></td> 
+	<td> Connects adjectives with intensifiers.
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> She is already here.</td> 
+	<td> advmod(is here)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-aXikaraNavAcI is here)</b></td> 
+	<td> Connects verbs with spatial modifiers.
+</td> </tr>
+<tr> 
+	<td> neg (negation modifier)</td> 
+	<td> She did not come.</td> 
+	<td> neg(come not)</td> 
+	<td> ND</td> 
+	<td> (kriyA-kriyA_niReXaka come not)</td> 
+	<td> Connects verbs with negation modifiers
+</td> </tr>
+<tr> 
+	<td> npadvmod (noun phrase as adverbial modifier)</td> 
+	<td> I met him two days ago.</td> 
+	<td> npadvmod(ago days)</td> 
+	<td> ND</td> 
+	<td> (viSeRya-viSeRaNa ago days)</td> 
+	<td> -
+</td> </tr>
+<tr> </tr>
+<tr> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Coordination Modifier Related Labels
+</td> </tr>
+<tr> 
+	<td> conj (conjunct)</td> 
+	<td> John, Mary, and Sam ate cake. </td> 
+	<td> conj(John Mary), conj(John Sam), nsubj(ate John)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-subject ate John), (kriyA-subject ate Mary), (kriyA-subject ate Sam)</b></td> 
+	<td> Instead of 'conj' label with every conjunction components, we give the real label to every component for WSD.
+</td> </tr>
+<tr> 
+	<td> cc (coordination)</td> 
+	<td> John, Mary and Sam ate cake. </td> 
+	<td> cc(John and), nsubj(ate John)</td> 
+	<td> ND</td> 
+	<td> (kriyA-subject ate and)</td> 
+	<td> We give a real lable with 'and' for Hindi vibhakties.
+</td> </tr>
+<tr> 
+	<td> -</td> 
+	<td> John, Mary and Sam ate cake.</td> 
+	<td> -</td> 
+	<td> -</td> 
+	<td> <b>(conjunction-components and John Mary Sam)</b></td> 
+	<td> The head of this relation is a coordinating conjunction and the modifiers are the elements connected by the coordinating conjunction.
+</td> </tr>
+<tr> 
+	<td> preconj (pre-correlative conjunction)</td> 
+	<td> Either John or Mary did it.</td> 
+	<td>  preconj(John Either)</td> 
+	<td> ND</td> 
+	<td> <b>(viSeRya-det_viSeRaNa John Either) </b></td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> tmod (temporal modifier)</td> 
+	<td> Last night, I swam in the pool.</td> 
+	<td> tmod(swam night)</td> 
+	<td> npadvmod(swam night)</td> 
+	<td> (kriyA-kAlavAcI swam night)</td> 
+	<td> This relation connects verbs with temporal expressions which don't have any overt preposition but they contain the meaning of the preposition like 'in', 'on' etc. 
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Noun Modifiers
+</td> </tr>
+<tr> 
+	<td> appos (appositional modifier)</td> 
+	<td> We do Computational Linguistics (CL).</td> 
+	<td> appos(Linguistics CL)</td> 
+	<td> ND</td> 
+	<td> (saMjFA-saMjFA_samAnAXikaraNa Linguistics CL)</td> 
+	<td> This relation connects nouns with their appositive modifiers. An appositive modifier can be a single word or a phrase. It is placed next to some other word or phrase.
+</td> </tr>
+<tr> 
+	<td> det (determinor)</td> 
+	<td> The US military</td> 
+	<td> det(military The)</td> 
+	<td> ND</td> 
+	<td> (viSeRya-det_viSeRaNa military The)</td> 
+	<td> Connects modifieds with the determiners a, an and the etc.
+</td> </tr>
+<tr> 
+	<td> infmod (infinitival modifier)</td> 
+	<td> I made an effort to come.</td> 
+	<td> vmod(effort come)</td> 
+	<td> infmod(effort come)</td> 
+	<td> (saMjFA-to_kqxanwa effort come)</td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> "</td> 
+	<td> Truffles picked during the spring are tasty.</td> 
+	<td> vmod(Truffles picked)</td> 
+	<td> infmod(Truffles picked)</td> 
+	<td> <b>(viSeRya-kqxanwa_viSeRaNa Truffles picked)</b></td> 
+	<td> This relation occurs when a non-verbal element is modified by a non-finite verb. Where non-finite verb acts as a modifier.
+</td> </tr>
+<tr> 
+	<td> PARTMOD (participial modifier)</td> 
+	<td> "</td> 
+	<td> vmod(Truffles picked)</td> 
+	<td> partmod(Truffles picked)</td> 
+	<td> <b>(viSeRya-kqxanwa_viSeRaNa Truffles picked)</b></td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> nn (noun compound modifier)</td> 
+	<td> We do Computational Linguistics (CL).</td> 
+	<td> nn(Linguistics Computational)</td> 
+	<td> ND</td> 
+	<td> (samAsa_viSeRya-samAsa_viSeRaNa Linguistics Computational)</td> 
+	<td> A samAsa_viSeRya is the head noun in a compound and samAsa_viSeRaNa is the modifier the head noun.
+</td> </tr>
+<tr> 
+	<td> num (numeric modifier)</td> 
+	<td> Sam spent forty dollars.</td> 
+	<td> num(dollars 40)</td> 
+	<td> ND</td> 
+	<td> (viSeRya-saMKyA_viSeRaNa dollars 40)</td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> <b>possessive (possessive modifier)</b></td> 
+	<td> John's car is good.</td> 
+	<td> possessive(John 's)</td> 
+	<td> ND</td> 
+	<td> <b>-</b></td> 
+	<td> We merge the possessive suffix "'s" with its head, hence don't give any relation with the possessive suffix.
+</td> </tr>
+<tr> 
+	<td> predet (predeterminer)</td> 
+	<td> All the boys are here.</td> 
+	<td> predet(boys all)</td> 
+	<td> ND</td> 
+	<td> (viSeRya-det_viSeRaNa boys all)</td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> rcmod</td> 
+	<td> This is the car for which I have waited.</td> 
+	<td> rcmod(car waited)</td> 
+	<td> ND</td> 
+	<td> <b>(viSeRya-jo_samAnAXikaraNa car which)</b></td> 
+	<td> Instead of showing the connection with the relative clause verb, we show it with the relative pronouns.
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Prepositional Phrase Related Labels
+</td> </tr>
+<tr> 
+	<td> pcomp (prepositional complement)</td> 
+	<td> I agree with what you said.</td> 
+	<td> pcomp(with said)</td> 
+	<td> ND</td> 
+	<td> (kriyA-with_saMbanXI agree said)</td> 
+	<td> We do not show any relation with the prepositions rather we show it with the prepositional objects. See  <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#pobj"> pobj </a>
+</td> </tr>
+<tr> 
+	<td> pobj (object of a preposition)</td> 
+	<td> I sat on the chair.</td> 
+	<td> pobj(on chair)</td> 
+	<td> ND</td> 
+	<td> (kriyA-on_saMbanXI sat chair)</td> 
+	<td> <a id="prep"> This relation is bahuvrIhi-samAsa (exhocentric compound) type relation or a meta-relation. This connects a verb with a noun through prepositions. The actual relation generated by the system for the given example sentence will be: kriyA-on_saMbanXI. The word preposition is substituted with the actual prepositions like 'in', 'on', with etc. occuring in the sentence. </a> 
+</td> </tr>
+<tr> 
+	<td> <b>prep (prepositional modifier)</b></td> 
+	<td> I sat on the chair.</td> 
+	<td> prep(sat on)</td> 
+	<td> ND</td> 
+	<td> "</td> 
+	<td> See  <a href="file:///home/kishori/anusaaraka/Doc/relation_table/anusaaraka-dep-mapping-table.html#pobj"> pobj </a>
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Modifiers: quantifier phrase related
+</td> </tr>
+<tr> 
+	<td> number (number compound modifier)</td> 
+	<td> I have seven million dollars.</td> 
+	<td> number(million seven)</td> 
+	<td> ND</td> 
+	<td> (saMKyA-saMKyA million seven)</td> 
+	<td> Connects one number with the follownig number.
+</td> </tr>
+<tr> 
+	<td> quantmod (quantifier phrase modifier)</td> 
+	<td> More than five people attended the meeting.</td> 
+	<td> quantmod(five than)</td> 
+	<td>  ND</td> 
+	<td> <b>(viSeRya-viSeRaka five than)</b></td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> </td> 
+	<td> 
+</td> </tr>
+<tr> 
+	<td> Modifiers: miscellaneous
+</td> </tr>
+<tr> 
+	<td> amod (adjectival modifier)</td> 
+	<td> She is a beautiful girl.</td> 
+	<td> amod(girl beautiful)</td> 
+	<td> ND</td> 
+	<td> (viSeRya-viSeRaNa girl beautiful)</td> 
+	<td> In general viSeRya reffers to modified and viSeRaNa to modifier.
+</td> </tr>
+<tr> 
+	<td> dep (unclassified dependent)</td> 
+	<td> -</td> 
+	<td> -</td> 
+	<td> ND</td> 
+	<td> <b>viSeRya-viSeRaNa</b></td> 
+	<td> Stanford parser gives the label 'dep' when a more precise relation in the hierarchy does not exist or cannot be retrieved by the system.
+</td> </tr>
+<tr> 
+	<td> intj (interjection)</td> 
+	<td> Well, I will read the book today.</td> 
+	<td> discourse(birthday Well)</td> 
+	<td> intj(read Well)</td> 
+	<td> <b>-</b></td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> parataxis (parataxis/parenthetical modifier)</td> 
+	<td> The guy, John said, left early in the morning.</td> 
+	<td> parataxis(left said)</td> 
+	<td> ND</td> 
+	<td> <b>(kriyA-vAkyakarma said left)</b></td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> poss (possession modifier)</td> 
+	<td> I bought John's car.</td> 
+	<td> poss(car John)</td> 
+	<td> ND</td> 
+	<td> (viSeRya-RaRTI_viSeRaNa car John's)</td> 
+	<td> We combine the possessive suffix "'s" with the possession modifier.
+</td> </tr>
+<tr> 
+	<td> prt (phrasal verb particle)</td> 
+	<td> They shut down the station.</td> 
+	<td> prt(shut down)</td> 
+	<td> ND</td> 
+	<td> (kriyA-upasarga shut down)</td> 
+	<td>  Connects verbs with particles.
+</td> </tr>
+<tr> 
+	<td> measure (measure modifier)</td> 
+	<td> It happened three years earlier.</td> 
+	<td> <b>npadvmod(years earlier)</b></td> 
+	<td> ND</td> 
+	<td> (viSeRya-viSeRaNa years earlier)</td> 
+	<td> -
+</td> </tr>
+<tr> 
+	<td> <b>xsubj (controlling subject)</b></td> 
+	<td> She seemed to like the hat.</td> 
+	<td> xsubj(like She)</td> 
+	<td> ND</td> 
+	<td> -c-</td> 
+	<td> We decided that there is no need to show such long dependencies.
+</td> </tr>
+</tbody></table>
+
+
+</body></html>
