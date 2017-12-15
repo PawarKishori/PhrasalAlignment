@@ -144,6 +144,24 @@ The backend files of phrasal alignment will be in :
 cd /home/master/tmp_anu_dir/tmp/gyan_nidhi_e500_tmp/
 -----------------------------------------------------------------------------------------------
 12-dec
-program to convert parser output into facts format
+program to convert parser output into facts format(manju mam)
 mapping of UD tagging, Enhanced UD tagging, Sukhada Paninian notation, Dipti Paninian Notation
+---------------------------------------------------------------------------------------------
+14- dec
+Stanford dep(nsubj, nmod) -> Paninian dep by Sukhda(krIyA-to-saMbabXI,etc) => Done for old version of Stanford parser
+Have to update stanford parser in anusaaraka, this will add/remove/change stanford dep to Enhanced stanford dep.
+Then need to map extra relations into again Sukhada paninian dependency.
+This will bring dependency representation of stanford to paninian dependency(Sukhada's) from english side.
+
+Now I also need to map Dipti mam's paninian dependency(k1,k2,lwg_psp,etc) to Sukhada paninian dependency(kriyA-to-saMbanXI) which was given by hindi parser.
+
+All these will lead to 
+1. create a parse tree for english sentence by stanford parser, with sukhada's paninian relation.
+2. create a parse tree for hindi sentence by irshad's neural network parser, with sukhada's paninian relation.
+3. And Alignment tool will create a parse trees of english and hindi sentences with same paninian relation.
+4. This will lead to development of  parallel treebank automatically using Alignment tool.
+5. Note: 100% mapping of stanford dependency relations into paninian is not possible in one instance. So we need to do in as much as possible now. Then with bootstrapping this procedure will automatically map the relations with building corpus as much as we can.
+
+
+
 
