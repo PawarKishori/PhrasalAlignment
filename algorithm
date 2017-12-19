@@ -162,6 +162,19 @@ All these will lead to
 4. This will lead to development of  parallel treebank automatically using Alignment tool.
 5. Note: 100% mapping of stanford dependency relations into paninian is not possible in one instance. So we need to do in as much as possible now. Then with bootstrapping this procedure will automatically map the relations with building corpus as much as we can.
 
+============================
+Observation and Analysis:
+1goeswith : She came because she liked me.
+stanford latest not giving the output.
+2
+The director is 65 years <--old : nmod:npmod
+Enhanced dep giving ERROR: Failed to load collapsed_ccproc_dep data! Please contact the administrator.
 
+3
+I want students to go.
+There was a kid playing in the garden.
+I made him build the house.
+I got the house built.
 
+remaining observations and analysis is on
 
