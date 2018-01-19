@@ -1,0 +1,95 @@
+This document is notes after meeting with Vineet Chaitanya and Soma Paul.
+
+Aim: Analysis of various parsers and their dependencies, in order to integrate most semantic and (close to paninian dependencies) parser into Anusaaraka (Language Acceseor)
+
+Date: 19/1/18
+
+Sentence:
+1) Bell, based in Los Angeles, makes and distributes electronic, computer and building products.
+
+SD:
+nsubj(makes-8, Bell-1)
+nsubj(distributes-10, Bell-1)
+vmod(Bell-1, based-3)
+nn(Angeles-6, Los-5)
+prep_in(based-3, Angeles-6)
+root(ROOT-0, makes-8)
+conj_and(makes-8, distributes-10)
+amod(products-16, electronic-11)
+conj_and(electronic-11, computer-13)
+amod(products-16, computer-13)
+conj_and(electronic-11, building-15)
+amod(products-16, building-15)
+dobj(makes-8, products-16)
+
+UD:
+nsubj(makes-8, Bell-1)
+nsubj(distributes-10, Bell-1)
+acl(Bell-1, based-3)
+case(Angeles-6, in-4)
+compound(Angeles-6, Los-5)
+nmod:in(based-3, Angeles-6)
+root(ROOT-0, makes-8)
+cc(makes-8, and-9)
+conj:and(makes-8, distributes-10)
+amod(products-16, electronic-11)
+conj:and(electronic-11, computer-13)
+amod(products-16, computer-13)
+cc(electronic-11, and-14)
+conj:and(electronic-11, building-15)
+amod(products-16, building-15)
+dobj(makes-8, products-16)
+
+
+2) Bell, which is based in Los Angeles, makes and distributes electronic, computer and building products.
+
+SD: 
+Parsing [sent. 1 len. 19]: Bell , which is based in Los Angeles , makes and distributes electronic , computer and building products .
+nsubjpass(based-5, Bell-1)
+nsubj(makes-10, Bell-1)
+nsubj(distributes-12, Bell-1)
+auxpass(based-5, is-4)
+rcmod(Bell-1, based-5)
+nn(Angeles-8, Los-7)
+prep_in(based-5, Angeles-8)
+root(ROOT-0, makes-10)
+conj_and(makes-10, distributes-12)
+amod(products-18, electronic-13)
+conj_and(electronic-13, computer-15)
+amod(products-18, computer-15)
+conj_and(electronic-13, building-17)
+amod(products-18, building-17)
+dobj(makes-10, products-18)
+
+UD:
+Parsing [sent. 1 len. 19]: Bell , which is based in Los Angeles , makes and distributes electronic , computer and building products .
+nsubjpass(based-5, Bell-1)
+nsubj(makes-10, Bell-1)
+nsubj(distributes-12, Bell-1)
+ref(Bell-1, which-3)
+auxpass(based-5, is-4)
+acl:relcl(Bell-1, based-5)
+case(Angeles-8, in-6)
+compound(Angeles-8, Los-7)
+nmod:in(based-5, Angeles-8)
+root(ROOT-0, makes-10)
+cc(makes-10, and-11)
+conj:and(makes-10, distributes-12)
+amod(products-18, electronic-13)
+conj:and(electronic-13, computer-15)
+amod(products-18, computer-15)
+cc(electronic-13, and-16)
+conj:and(electronic-13, building-17)
+amod(products-18, building-17)
+dobj(makes-10, products-18)
+
+Relation between (Bell, based)
+---------------------------------
+SD           |      UD          |
+=================================
+1)vmod       |   acl            |
+2)nsubjpass  |   acl:relcl      |
+             |   ref(Bell,which)|
+---------------------------------
+So SD was giving better than UD.
+
