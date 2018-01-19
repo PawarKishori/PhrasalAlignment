@@ -176,5 +176,49 @@ There was a kid playing in the garden.
 I made him build the house.
 I got the house built.
 
-remaining observations and analysis is on
+remaining observations and analysis is on drive
+===========================================================================================
+15-Jan-2018
+Till now I got confused in various things, but now I have cleared following things and the obsrvations are as follows:
 
+1. CoreNLP is whole pipeline where it does everything from POS, NER, Co-referencing, Parsing etc. Initially I was running whole CoreNLP, but I should have run only stanford parser.
+2. After instalation of stanford parser I need to analyze the 2 dependency formats given by stanford parser
+a) stanford dependencies - basic, collapsed, ccprocessed, collapsed tree, non-collapsed. 
+b) universal dependencies - basic, enhanced, enhanced++
+
+Bell, a company which is based in LA, makes and distributes computer products
+1.basic
+2.collapsed (grouping, graph)
+3.ccprocessed (propogation => here we need to work more)
+4. collapsed tree 
+5. non-collapsed tree (basic+extra)
+
+Similarly do observations for UD (basic, enhanced, enhanced++)
+.....
+.....
+
+Create documentation of commands of all variation with options (-originalDependencies, -outputFormat, -outputFormatOptions), with default conditions and which command to use for which type of output.
+
+U should know which output format from above outputs should be used to do necessary information extraction, which will be used by us in stnford-parser-english-anusaaraka-extension. U should be master in that.
+
+The next task told by sir
+Just like the analysis I am doing for stanford, I should also do it for following 3:
+1. Parser which uses, MRS-DMRS structure
+2. Stanford Parser
+3. Syntaxnet used by DeepL (which is performing better than Microsoft and google (in Europian languages) due to attention-based model)
+
+I need to do it from hindi parsing side too.
+
+Then we have to take a sentence which will show all distinctions of all 3 parsers and there dependencies, and how we are dealing with all those and our extension work to all these parsers. This will give us english parsing very close to deep semantics. Which will help us to go in depth of semantics. So our goal is to make a platform for language independent deep semantics (this goal is similar to UD people, but to achieve they are going to shallow level, whereas we are going in depth of semantics.)
+
+How this work is helpful for me?
+So this is helpful for overall deep semantics independent of all languages
+This is helpful to enhance Anusaaraka MT.
+This is also helpful for Alignment tool which is my thesis topic. As parser improves my alignment tool gives me better result.
+
+Deep learning (how to start)
+Parsing expert (Needs :  Conscious, continous work. What I will learn :Breadth work, knowing of all parsers, Future Scope:)
+Deep Semantics (Needs : Sanskrit knowledge)
+CL
+
+Write a proposal
