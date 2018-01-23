@@ -141,8 +141,33 @@ But our claim is now we are going towards more semantic form. So we just have to
 The first category mentioned (syntactic) composed of tasks that require a syntactic tree such as source-side reordering.
 So usually, in SMT and NMT, they do soource side reordering. Ex. Eng-Hindi translation => they will reorder eng sentence to hindi sentence and the further procedure. But we will use both target side reordering and source side reordering in Anusaaraka. The whole sentence is translated to various layers and then we will reorder hindi sentence. But in case of prepositions and postpositions, we need to use source side reordering. So depending on the liguistic properties and depending on our requirement of application, we will use either target and/or source side reordering.
 
+When they say syntactic representations, actually their most of the time intention is to talk about constituency parsing and not dependency parsing.
+=========================================================================================================================================================
+Fred started to laugh
+	SD											UD
+  nsubj(started-2, Fred-1)                                                      |  nsubj(started-2, Fred-1)
+  nsubj(laugh-4, Fred-1)                                                        |  nsubj:xsubj(laugh-4, Fred-1)                                                  
+  root(ROOT-0, started-2)                                                       |  root(ROOT-0, started-2)
+  aux(laugh-4, to-3)                                                            |  mark(laugh-4, to-3)                                                           
+ ?xcomp(started-2, laugh-4)                                                     |  xcomp(started-2, laugh-4)
+
+
+Panini
+there is karwA relation between Fred and laugh and we will treat started to as TAM information... wrt analysis of hindi . usane hasanA Suru kiyA.
+
+
+xsubj : controlling_clausal_subject
+The "controlling clausal subject" relation. Used in the enhanced and enhanced++ representations between a controlled verb and its nominal controller.
+
+Example:
+"That they bought the company " → nsubj(hat, seemed)
+nsubjpass:xsubj(hat, bought)
+mark(to, bought)
+aux(have, bought)
+auxpass(been, bought)
 
 =========================================================================================================================================================
+
 
 
 
