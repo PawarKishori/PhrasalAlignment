@@ -92,4 +92,58 @@ SD           |      UD          |
              |   ref(Bell,which)|
 ---------------------------------
 So SD was giving better than UD.
+========================================================================================================================================================
+Observation 2
+
+sentence :
+He is eating with the spoon.
+
+SD_basic:
+nsubj(eating-3, He-1)
+aux(eating-3, is-2)
+root(ROOT-0, eating-3)
+prep(eating-3, with-4)
+det(spoon-6, the-5)
+pobj(with-4, spoon-6
+
+SD:
+nsubj(eating-3, He-1)
+aux(eating-3, is-2)
+root(ROOT-0, eating-3)
+det(spoon-6, the-5)
+prep_with(eating-3, spoon-6)
+
+UD:
+nsubj(eating-3, He-1)
+aux(eating-3, is-2)
+root(ROOT-0, eating-3)
+case(spoon-6, with-4)
+det(spoon-6, the-5)
+nmod:with(eating-3, spoon-6)
+
+Panini:
+karwA(eating-3, He-1)
+karana(eating-3, spoon)
+
+In both UD and SD, nsubj is giving equivalent information as of Paninian karwA.
+prep_with and karana are closer in syntactic form (same nmod:with). But nmod doesn't give any other info, like which kind of nominal modifier. It is just saying that spoon is a nominal modifier of eating. Paninian gives more info: the modifier is instrument.
+
+Conclusion :
+While going from Eng to hindi SD is closer to Panini and UD is loosing its information.
+==========================================================================================================================================================
+Observation in paper reading
+
+In Enhanced Eng UD paper:
+Introduction paragraph:
+Broadly SD gives two kind of dependency representations: Syntactic and SHALLOW semantic.
+But our claim is now we are going towards more semantic form. So we just have to make use of SD as one of the tool to improve Anusaaraka. We must know where to use which parser(and it's which representation), depending on its capability.
+
+The first category mentioned (syntactic) composed of tasks that require a syntactic tree such as source-side reordering.
+So usually, in SMT and NMT, they do soource side reordering. Ex. Eng-Hindi translation => they will reorder eng sentence to hindi sentence and the further procedure. But we will use both target side reordering and source side reordering in Anusaaraka. The whole sentence is translated to various layers and then we will reorder hindi sentence. But in case of prepositions and postpositions, we need to use source side reordering. So depending on the liguistic properties and depending on our requirement of application, we will use either target and/or source side reordering.
+
+
+=========================================================================================================================================================
+
+
+
 
