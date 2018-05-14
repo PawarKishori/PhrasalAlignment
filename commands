@@ -1,0 +1,92 @@
+1. to get SD dependencies by running corenlp.
+
+ java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse -file paper_eg  -parse.originalDependencies -outputFormat conll
+
+2. to get UD dependencies by running corenlp.
+
+java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse -file paper_eg  -outputFormat conll
+
+3.
+ java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse -file paper_eg -outputFormat conll -outputRepresentation enhanced++
+basic|enhanced|enhanced++ 
+
+=> all three are giving same parses in universal dependencies
+
+ask this to stanford people
+
+4.
+ java -cp "*" -Xmx2g edu.stanford.nlp.pipeline.StanfordCoreNLP -annotators tokenize,ssplit,pos,lemma,ner,parse -file paper_eg -outputFormat conll -parse.originalDependencies -outputRepresentation enhanced++
+
+basic|enhanced|enhanced++ 
+
+=> all three are giving same parses in stanford dependencies
+
+But SD and UD giving different representations/notations.
+=======================================================================================
+do mapping with both
+
+======================================================================================
+https://mailman.stanford.edu/pipermail/java-nlp-user/
+https://nlp.stanford.edu/software/parser-faq.html
+https://stanfordnlp.github.io/CoreNLP/faq.html
+=======================================================================================
+Why is the parser output different from the CoreNLP output?
+
+For some sentences the parse tree output by the standalone parser and the tree output by the CoreNLP pipeline can be different. The reason for this is that if you run the CoreNLP pipeline with the default annotators, it will run a part-of-speech (POS) tagger before running the parser. If you run the parser on an already POS-tagged sentence, it considers the POS tags as being fixed and ignores the words in the sentence.
+
+If you want to obtain the same results, you can either POS-tag your corpus before tagging it (see #12) or you can disable the POS tagger in CoreNLP by updating the list of annotators:
+=============================================================================================
+Standalone PARSER
+https://mailman.stanford.edu/pipermail/parser-user/
+
+On a Unix system you should be able to parse the English test file with the
+following command:	
+
+    ./lexparser.sh data/testsent.txt
+
+This uses the PCFG parser, which is quick to load and run, and quite accurate.
+
+[Notes: it takes a few seconds to load the parser data before parsing
+begins; continued parsing is quicker. To use the lexicalized parser, replace
+englishPCFG.ser.gz with englishFactored.ser.gz in the lexparser.sh script
+and use the flag -mx600m to give more memory to java.]
+
+NEURAL NETWORK DEPENDENCY PARSER USAGE
+
+To use the neural net dependency parser, issue the following command:
+
+    java -Xmx2g -cp "*" edu.stanford.nlp.parser.nndep.DependencyParser \
+    -model edu/stanford/nlp/models/parser/nndep/english_UD.gz \
+    -textFile data/english-onesent.txt -outFile data/english-onesent.txt.out 
+ -originalDependencies
+-outputFormat conll => wont work
+
+The output will be written to data/english-onesent.txt.out
+
+
+==========================================================================================
+modifications in lexparser.sh
+java -mx150m -cp "$scriptdir/*:" edu.stanford.nlp.parser.lexparser.LexicalizedParser \
+ -outputFormat "penn,typedDependencies" edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz $*
+
+https://github.com/stanfordnlp/CoreNLP/blob/master/doc/lexparser/README_dependencies.txt
+
+==============================================================================
+Running stanford parser :  basic, ccprocessed, collapsed, noncollapsed etc
+
+java -mx150m -cp "$scriptdir/*:" edu.stanford.nlp.parser.lexparser.LexicalizedParser \
+ -outputFormat "typedDependencies" -originalDependencies -outputFormatOptions nonCollapsedDependenciesSeparated edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz $*
+#-outputFormatOptions collapsedDependencies
+#-outputFormatOptions basicDependencies
+#-outputFormatOptions CCPropagatedDependencies
+# nonCollapsedDependencies
+# nonCollapsedDependenciesSeparated
+==============================================================================
+In the above command if we remove -originalDependencies, and -outputFormatOptions we will get UDEnhanced relations for the sentence.
+
+====================================
+
+java -mx200m edu.stanford.nlp.parser.lexparser.LexicalizedParser -retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt
+
+
+-retainTMPSubcategories -outputFormat "wordsAndTags,penn,typedDependencies" englishPCFG.ser.gz mumbai.txt
