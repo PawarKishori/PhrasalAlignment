@@ -222,3 +222,9 @@ Deep Semantics (Needs : Sanskrit knowledge)
 CL
 
 Write a proposal
+-=============================================
+
+How to run new 2017 stanford parser, its derived scripts etc is there in the following directory:
+/home/kishori/anusaaraka/Parsers/stanford-parser/stanford-parser-full-2017-06-09/
+You can see multiple outputs of that.
+
