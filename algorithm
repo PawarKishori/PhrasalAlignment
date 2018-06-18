@@ -278,7 +278,7 @@ When parser is giving correct parser then utilise in alignment, if not improve r
 
 
 1. Eng-Hin correct parse: the do alignment. Take information from parser
-2. When English parser is correct then try to improve hindi parse and Hindi Parser.
+2. When English parser is correct then try to improve hindi parse and Hindi Parser.   ?How to decide which parser is correct?
 3. When Hindi parse is correct, improve english parse and Hindi Parser.
 4. when both are incorrect, take help from each other and improve parse of each other.
 
@@ -363,4 +363,35 @@ rAma ne kahA ki vaha usake mAwA kI ora se KAyegA.
 4. 2.4 => Pira-BI => here relation is dep, which means hindi parser is not able to identify the relation, which should be defined. So this is work at UD dep vs paninian dep. and 'still' in english is 'Pira_BI' in hindi so there wont be any relation in english equivalent to dep(which is incorrect according to paninian)
 5. 2.3 => appos in english and nmod in hindi. This should be mapped. So b4 that nmod should be nmod:r6, here r6 should be derived from case+kA information => write a clips rules into it.
 6. MOST IMPORTANT: where the clips rule written, from where facts of parser output generated, how to debug?
+
+==========================================================================================================
+18-6-18
+
+1. Sir told not to add tokenizer before parser for hindi. and manju mam resolved it internally using p1, p2, parse-word ids and by removing Punctuation.
+   Sir says tokenizing punctuations will increase parse work, bcoz parser has to write a rule to dicide starting " and ending ".
+   So my task is to find the cases where, I will show 2 o/ps tokenized o/p and not-tokenized o/p and show which will be better. Find a word "me whose relation was wrong by parser but if we tokenize it, it will improve the output.
+ => Show such cases to sir 
+
+2.When hindi parse and english parse are correct but still alignment is not able to resolve: 
+ 
+  Find such cases of cop, aux, ...,who did something (jo-vo) cases. By statistics, show that 
+	a) Query extraction: what relation is given by manual annotation => HDTB
+	b) Query extraction: what relation is given by UD treebank => UD.conll
+	c) Meeting with sir: What is paninian phenomenon
+   while analysing all these, come to a conclusion and make the changes to clip rules/ write new clip rules.
+   homework: h1) Theory: by seeing the english sentence I should understand what is correct english parse(according to UD english notations)
+             h2) Theory: by seeing the hindi sentence I should understand what is correct hindi parse(according to UD hindi notations)	
+	     h3) Clips: why there is difference between UD-english and UD-hindi ? Discuss with Dipti ma'am and then with sir.
+		 Then we have to switch to Paninian relations, i.e. from english side map UD-english to Anu-panini mapping. And map UD-hindi relation to Anu-panini.
+		 This mapping will envolve writing clips rules. => Clean the code,Prepare a parallel module by u, which is efficiently written.	
+        There are long term and short term goals. Long term goals we have to meet for my thesis and for refined system
+        There are short term goals/solutions. They are not that efficient compared to whole system, but have to do, to show working system to interns and people
+
+3. When hindi parse is correct(? How to decide this), align using scope
+   When english parse is correct, align using scope
+
+
+
+
+
 
