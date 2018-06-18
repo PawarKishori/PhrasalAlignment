@@ -86,6 +86,14 @@ Todays task - checking the accuracy of irshad's hindi parser (manually, with sir
 hindi_irshad.txt    => wrongly annotated dep relations
                     *  Discussion required
 
+Command to run iscnlp parser:
+To get the hindi dependency tags with universal dependency tagset:
+isc-parser -i meet-18-8 -o meet-18-8.out.ud -u
+
+To get the hindi dependency tags with  Paninian dependency tagset:
+isc-parser -i meet-18-8 -o meet-18-8.out.panini
+
+
 -------------------------------------------------------------------------------------------------
 3-dec-2017
 Gathering of interchunk and intrachunk paninian dependencies from Pruthwik, Dipti mam
@@ -227,4 +235,132 @@ Write a proposal
 How to run new 2017 stanford parser, its derived scripts etc is there in the following directory:
 /home/kishori/anusaaraka/Parsers/stanford-parser/stanford-parser-full-2017-06-09/
 You can see multiple outputs of that.
+================================================================================================
+
+18-may
+Intigrating hindi parser
+Irshad had created a new parser ... whose link is https://github.com/irshadbhat/nsdp-cs 
+use this in phrasal alignment.
+
+use this : mono_jm_parser.py
+requirements: 
+1.git is code
+2. requiremwnts.txt
+3. sudo pip install dynet
+
+Download the pretrained models from: https://bitbucket.org/irshadbhat/nsdp-cs-models/src
+extract the respective model using : bunzip2 *.bz2 
+
+input file should be in wx format
+
+Command to run the parser:
+To get dependency parse with UD tagset
+python mono_jm_parser.py --load /home/master/nsdp-cs/nsdp-cs-models/UD/HI/PARSER/hi-ud-parser --test meet-18-8 --output-file meet-18-8.out.v2.ud
+
+To get dependency parse with Paninian tagset:
+python mono_jm_parser.py --load /home/master/nsdp-cs/nsdp-cs-models/PANINI/HI/PARSER/hi-bist-parser --test meet-18-8 --output-fi
+le meet-18-8.out.v2.panini
+---------------------------------------------------------------
+24-may
+
+The hindi parser is making errors in POS tagging and i
+
+------------------------------------------------------------------
+26-may
+Parsing analysis
+
+
+
+
+---------------------------------------------------------------------
+5 june
+When parser is giving correct parser then utilise in alignment, if not improve respective parser=> write different parser module for it.:
+
+
+1. Eng-Hin correct parse: the do alignment. Take information from parser
+2. When English parser is correct then try to improve hindi parse and Hindi Parser.
+3. When Hindi parse is correct, improve english parse and Hindi Parser.
+4. when both are incorrect, take help from each other and improve parse of each other.
+
+meet 5:
+कौंतेय कहकर सम्बोधित करने से यह प्रकट होता है कि वह अपनी माता की और ( मातृकुल ) से सम्बन्धित है और भारत कहने से उसके पिता की और ( पितृकुल ) से सम्बन्ध प्रकट होता है .
+
+
+The above hindi sentence have typo => Ora, it should be ora. So such errors should be AUTOMATEDLY corrected using dictionary or something. As of now you do it manually.
+कौंतेय कहकर सम्बोधित करने से यह प्रकट होता है कि वह अपनी माता की ओर ( मातृकुल ) से सम्बन्धित है और भारत कहने से उसके पिता की ओर ( पितृकुल ) से सम्बन्ध प्रकट होता है .
+
+Analysis after meeting,
+English dep parse is giving wrong parse, it is considering addresss as mainverb, but signifies is main verb in it.
+Hindi dep parse is giving correct parse after modifying Ora to ora. 
+Alignment was making error when same words occur twice in the sentences, it keeps doing mismatching. Such error can be resolved using scope of the clauses in the sentences.
+
+In this sentence, consider English Dep, though it is wrong, the tree below 2 signifies concretely deciding boundaries of 2 small clauses i.e.
+1. as Kounteya signifies his great blood relations from his mother's side
+2. as Bharata signifies his greatness from his father's side.
+
+Now when it comes to Hindi parse, which is correct(though sentence construction is   diffeent we can use for aligning the words in the scope)
+Here the 2 clauses under 2 prakat hota he are:
+1. कौंतेय कहकर सम्बोधित करने से यह प्रकट होता है कि वह अपनी माता की ओर ( मातृकुल ) से सम्बन्धित है 
+2. और भारत कहने से उसके पिता की ओर ( पितृकुल ) से सम्बन्ध प्रकट होता है .
+
+Once we identify 2 clause boundaries in english and hindi like this, Now we need to align English's 1st to hindi's 1st clause and same for 2.
+We can do so by 
+1. Konteya-कौंतेय alignment i.e by proper noun - proper noun alignment. 
+2. mother - mata i.e. english-hindi dictionary, for a word, matching only once.
+3. some other heuristics.
+
+we can align words from hindi 1st clause in english's 1st clause. 
+In this way, scope of the clauses can be decided by parser, and alignment will improve too much by this.
+
+To get finer level alignment:
+drop parenthesis content => to get closer parse.
+
+
+kI vs ki -ask shastri
+
+http://universaldependencies.org/treebanks/hi_hdtb/hi_hdtb-pos-ADP.html
+kI:POS  ADP 8161: इस मंदिर का स्‍थापत्‍य अजंता की गुफाओं से प्रेरित है ।
+ki: SCONJ
+
+kI, here both are case
+ki, here is mark
+To address him as Kaunteya signifies his great blood relations from his mother's side; and to address him as Bhaarata signifies his greatness from his father's side.
+Scope of the sentence can't be determined from hindi parse, as it is giving wrong parse: Here hindi parse is wrong mAtA kI Ora-> this Ora is wrongly POSed hence wrong parsing.
+
+
+Rama said that he will eat from his mother's side.
+1	Rama	Rama	NNP	PERSON	2	nsubj
+2	said	say	VBD	O	0	ROOT
+3	that	that	IN	O	6	mark
+4	he	he	PRP	O	6	nsubj
+5	will	will	MD	O	6	aux
+6	eat	eat	VB	O	2	ccomp
+7	from	from	IN	O	11	case
+8	his	he	PRP$	O	9	nmod:poss
+9	mother	mother	NN	O	11	nmod:poss
+10	's	's	POS	O	9	case
+11	side	side	NN	O	6	nmod
+12	.	.	.	O	_	_
+
+rAma ne kahA ki vaha usake mAwA kI ora se KAyegA. 
+1       rAma    _       PROPN   _       _       3       nsubj   _       _
+2       ne      _       ADP     _       _       1       case    _       _
+3       kahA    _       VERB    _       _       0       root    _       _
+4       ki      _       SCONJ   _       _       11      mark    _       _
+5       vaha    _       PRON    _       _       11      nsubj   _       _
+6       usake   _       PRON    _       _       7       nmod    _       _
+7       mAwA    _       NOUN    _       _       11      obl     _       _
+8       kI      _       ADP     _       _       7       case    _       _
+9       ora     _       ADP     _       _       7       case    _       _
+10      se      _       ADP     _       _       9       case    _       _
+11      KAyegA  _       VERB    _       _       3       obj     _       _
+12      .       _       PUNCT   _       _       3       punct   _       _
+=======================================================================================================
+11-6-18
+1. Tell Manju mam to use tokenizer b4 parser
+2. Add parser eng left over and hindi left over words in it.
+3. 2.4 => why usaKi not aligned to his
+4. 2.4 => Pira-BI => here relation is dep, which means hindi parser is not able to identify the relation, which should be defined. So this is work at UD dep vs paninian dep. and 'still' in english is 'Pira_BI' in hindi so there wont be any relation in english equivalent to dep(which is incorrect according to paninian)
+5. 2.3 => appos in english and nmod in hindi. This should be mapped. So b4 that nmod should be nmod:r6, here r6 should be derived from case+kA information => write a clips rules into it.
+6. MOST IMPORTANT: where the clips rule written, from where facts of parser output generated, how to debug?
 

@@ -1,0 +1,137 @@
+Anusaaraka is a rule based English-Hindi Machine Translation system, which has integrated various tools to give a machine translation tool.
+
+Bootstrapping using alignment tool.
+The goal of this project is to use Alignment tool for bootstrapping, which results in development of Eng-Hin parallel corpora.
+We can also improve existing hindi rule based parser by this procedure. So its a cycle. Its a debugging tool. Alignment tool leads to
+improve accuracy of various tools used in Anusaaraka including, Hindi parser and a good Hindi parser will help to create an parallel Treebank.
+
+This tool will help to automate the procedure of corpus creation, which is vital in creation of resources, which drastically reduces the human cost as well as time required to create a Treebank.
+
+Alignment tool is a tool which takes following outputs of Anusaaraka and Phrasal as input:
+1. Anusaaraka Eng-Hin translation
+2. SMT output
+
+And it gives alignment on word, phrase and parser level.
+
+Readme to create phrasal dictionaries and to run phrasal alignment:
+###################################################################
+
+Pre-requisite:
+############
+1. anusaaraka need to be installed.
+2. rule based hindi parser need to be installed.
+        (Note: git clone anu_resources@10.2.62.172:/home/anu_resources/hindi-parser-repo/create-hindi-parser.git
+               set the path in bashrc : export rule_based_parser=<path of hindi parser>)
+3. phrase tables (eng-hin and hin-eng)
+
+
+Note:
+(phrasal data available for the following corpuses
+        physics                 physics
+        social_science          social_science
+        crime_and_punishment    crm_pns
+        Total_tourism           tourism
+        Total_health            health
+)
+
+-------------------------
+Steps to do first time and second time *
+sequence to run run.sh, run_alignment.sh and compile_prog.sh *
+-------------------------
+Step 1
+What run.sh is do?
+
+run.sh takes three arguments:
+sh run.sh <phrase-table-en-hi> <phrase-table-hi-en> <corpus_name>
+Eg.  sh run.sh phrases_en-hi  phrases_hi-en  physics
+Eg.  sh run.sh gyan_nidhi_en_hi_wx gyan_nidhi_hi_en_wx gyan_nidhi
+
+This command takes the phrase table of the corpus created by Phrasal tool and changes this phrase output into dictionary gdbm format.
+The gdbm output(gyan_nidhi_en_hi_wx, gyan_nidhi_hi_en_wx) will be saved in /anusaaraka/miscellaneous/SMT/phrasal_alignment
+
+
+1. cp -r compile_prog.sh  $1 $2  $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/
+   when we run phrasal for the first time, the first step we do is copy compile.sh,phrsal tables for eng-hin and hin-eng pairs for a corpus into phrasal_alignment   folder in anusaaraka.
+
+2. cp  HINDI_POS_CHUNKER.tgz  $HOME_anu_test/miscellaneous/
+   Then we copy HINDI_POS_CHUNKER.tgz(which was already into phrasal_data) to miscellaneous folder.
+
+3. cd $HOME_anu_test/miscellaneous/
+   tar -xvzf HINDI_POS_CHUNKER.tgz
+   Extract hindi pos tagger, which we copied into miscellaneous.
+
+4. cd $HOME_anu_test/miscellaneous/HINDI_POS_CHUNKER
+   sh compile.sh
+   1.1 compile POS chuncker.
+
+5. cd  $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/
+   sh compile_prog.sh
+   1.1 gcc -o  phrase_gdbm_dict.out  phrase_gdbm_dict.c
+       This will create an executable file for creating phrasal_gdbm_dict.
+
+6. if [ "$3" != "" ] ; then
+        sh get_phrasal_dic-en-hi.sh $1 $3
+        sh get_phrasal_dic-hi-en-en.sh $2 $3
+   else
+        sh get_phrasal_dic-en-hi.sh $1
+        sh get_phrasal_dic-hi-en-en.sh $2
+   
+    Here, if corpus_name is not mentioned then system uses phrase tables which are NOT corpus specific. This option will be used in case if we dont have phrase tables (output of Phrasal) and we want to run phrasal alignment for the parallel corpora.
+
+----------------------------------------------
+What run_alignment.sh do?
+
+sh run_alignment.sh e1 h1 gyan_nidhi
+This command is used to run alignment tool on parallel corpus e1 and h1, which also uses gyan_nidhi dictionary (gdbm- created by above run.sh command)
+
+1. Anusaaraka_stanford.sh $1 0 True general onesent > $1_out 2>&1
+   This will run Anusaaraka on english sentence and *
+
+2. Anusaaraka_alignment.sh $1 $2 $3 $4 >> $1_out
+   This will *
+-------------------------------------------------
+
+After that we need to do compilation steps to run alignment data.
+1. cd $HOME_anu_test
+   Go in anusaaraka directory.
+2. git pull
+   update the anusaaraka software.
+3. shell_scripts/remove_out-files.sh
+   remove unnecessary files *
+4. shell_scripts/anu_compile.sh
+   compile anusaaraka * means exactly what
+5. cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
+6. sh minion_compile.sh
+   why *
+7. cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
+8. sh compile.sh
+   what compiles actually do*
+9. cd $rule_based_parser
+10. git pull
+11. compile.sh
+    Update and compile hindi rule based parser.
+
+-----------------------------
+After successfully running phrasal/run_* alignment output will be generated in following dir with filename_eng_slign.html file
+firefox /home/master/anu_output/e1_eng_align.html
+
+The backend files of phrasal alignment will be in :
+cd /home/master/tmp_anu_dir/tmp/gyan_nidhi_e500_tmp/
+---------------------------------------------------------
+In case you get error
+FAQ
+Giving error
+
+Debugging:
+/anusaaraka$ git diff --namestatus
+error: invalid option: --namestatus
+master@kishori-ThinkCentre-E73:~/anusaaraka$ git diff --name-status
+M       multifast-v1.4.2/src/phrasal_mwe/extract_hindi_key.c
+M       multifast-v1.4.2/src/phrasal_mwe/extract_key-hi-en.c
+M       multifast-v1.4.2/src/phrasal_mwe/extract_key.c
+
+git checkout all these 3 files
+++
+Did some changes in run_alignment.sh // which was not committed
+******
+

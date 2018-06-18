@@ -1,0 +1,55 @@
+#Anusaaraka directories
+
+$HOME_anu_output => all layered html outputs of anusaaraka machine translation.
+$HOME_anu_test   => Main anusaaraka directory, where all codes of anusaaraka has been written and remaining dependencies too.
+	/Anu_src => It cotains all c programs
+$HOME_anu_tmp    => All metadata of anusaaraka output in this directory.
+$HOME_anu_provisional_wsd_rules => wsd rules
+
+#Anusaaraka_stanford.sh pipeleine
+
+location : $HOME_anu_test/bin/Anusaaraka.sh
+to run   :  Anusaaraka_stanford.sh  sample 0 True physics
+               sample is file name , 0 for default parse , True is to use provisional and physics is to define physics domain of the given sentence saved in file
+
+ 1. [1-17]  mkdir anu_tmp and anu_output if the directories are not present.
+ 2. [20]    copy sample file to anu_tmp
+ 3. [22-36] mkdir anu_tmp/tmp and anu_tmp/help if those dir not exists. remove anu_tmp/tmp/sample_tmp folder if already exist(case when we are running same file again)
+ 4. [41]  copy sample file to anu_tmp/sample_tmp/ 
+ 5. [43-47] if 3rd argument is true then run get_canonical_form_prov_wsd_rules.sh and if it is false print (not sandbox) in sand_box.dat *(what is sand_box)
+ 6. [53] Check whether the file has "TITLE" or not, if not create a new title names 1.1 test. using a program $HOME_anu_test/Anu_src/check_for_TITLE.c
+ 7. [58] Running stanford's NER on given sentences $HOME_anu_test/Parsers/stanford-parser/src/run-ner.sh. * This is NER from stanford-2016. Why not new one??
+ 8. [68] Transliteration //commented
+ 9. [72] Saving word information. Formating the input file on word level. separating it by line by line. etc using Anu_src/word.c and Anu_src/rm_tags.c
+10. [77] Generating $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph using anusaaraka/apertium/morph.pl
+11. [83] Generating POS tags and chunks for the senteces using apertium using anusaaraka/apertuim/run_chunker_and_tagger.sh. Replacing abbrevations using replace-abbrevations.sh and anusaaraka/Anu_src/replace_nonascii-chars.c 
+12. [91] Calling Stanford Parser
+	 IF:when 2nd argument is not 0 or not null, run_multiple_parse_penn.sh is called. Input is all sentence file. Output is constituency parse in one line for all sentences.
+            $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1  this file is not found.
+            Above file is input to  preffered_parse.py and output is one_sentence_per_line.txt.std.penn_tmp
+         ELSE: When 2nd argument is 0 then stanford parser is called only by a shell script run_penn-pcfg.sh. Input is all eng sentences and output is constituency parse for every sentence.
+ 	In run_penn-pcfg.sh stanford 2015 is been called by following command:
+
+java  -mx900m -cp "$scriptdir/*:" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentences "newline" -outputFormat oneline -outputFormatOptions "treeDependencies" -tagSeparator / -tokenizerOptions "americanize=false, escapeForwardSlashAsterisk=false" edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz $1
+
+
+13. [101]	run_stanford-parser.sh 
+
+/Anu_src/identify-nonascii-chars.c
+python parser_correction.py
+./constituency_to_dependency.sh => changes constituency parse to basic, CCprocessed and collapsed dependencies for all sentences in one file. 
+./mapping-punctuations.out      => change . by P_DOT in constistuency parse
+sh run_lexicalize.sh            => java  -mx900m -cp "$scriptdir/*:" edu.stanford.nlp.trees.TreePrint -options "lexicalize" $1
+split-relations.py
+./get_word_cat.out
+
+
+14. [104] Tokenize
+ 	  $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl
+
+15. [106] Multiword
+
+16. Printing things....
+	
+
+
