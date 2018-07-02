@@ -1,4 +1,6 @@
 Anusaaraka Task:
+:q
+:q
 
 Goal of Anusaaraka is to create word aligned parallel corpora using following resourses:
 1. Anusaaraka output
@@ -278,7 +280,7 @@ When parser is giving correct parser then utilise in alignment, if not improve r
 
 
 1. Eng-Hin correct parse: the do alignment. Take information from parser
-2. When English parser is correct then try to improve hindi parse and Hindi Parser.   ?How to decide which parser is correct?
+2. When English parser is correct then try to improve hindi parse and Hindi Parser.   ?How to decide which parser is correct?= We have to first see using which parser the nth layer  alignment is taking place. if it is using english parser and many left over words are there, then take hindi parser help and do alignment. So this problem can be solved to some(80%) extent using if else. And we can take help of human supervisor too, but that should be as minimal as possible. 
 3. When Hindi parse is correct, improve english parse and Hindi Parser.
 4. when both are incorrect, take help from each other and improve parse of each other.
 
@@ -387,11 +389,71 @@ rAma ne kahA ki vaha usake mAwA kI ora se KAyegA.
         There are long term and short term goals. Long term goals we have to meet for my thesis and for refined system
         There are short term goals/solutions. They are not that efficient compared to whole system, but have to do, to show working system to interns and people
 
-3. When hindi parse is correct(? How to decide this), align using scope
+3. When hindi parse is correct(? How to decide this=> if eng_parse else hindi_parse), align using scope
    When english parse is correct, align using scope
 
 
+? Things to ask manju ma'am to make ur hands dirty:
+	where the clips rule written, from where facts of parser output generated, how to debug?
+	why she has written repetative code/rule? modify that
+	
 
 
+===========================================================================================================
+obl discussion
 
+Babur's Chinggisid lineage came from his mother's side
+(ROOT
+  (S
+    (NP
+      (NP (NNP Babur) (POS 's))
+      (NNP Chinggisid) (NN lineage))
+    (VP (VBD came)
+      (PP (IN from)
+        (NP
+          (NP (PRP$ his) (NN mother) (POS 's))
+          (NN side))))))
+
+nmod:poss(lineage-4, Babur-1)
+case(Babur-1, 's-2)
+compound(lineage-4, Chinggisid-3)
+nsubj(came-5, lineage-4)
+root(ROOT-0, came-5)
+case(side-10, from-6)
+nmod:poss(mother-8, his-7)
+nmod:poss(side-10, mother-8)
+case(mother-8, 's-9)
+nmod:from(came-5, side-10)
+
+bAbara kA ciMgIsIxa vaMSa usake mAz kI Ora se AyA hE
+1       bAbara  _       PROPN   _       _       4       nmod    _       _
+2       kA      _       ADP     _       _       1       case    _       _
+3       ciMgIsIxa       _       ADJ     _       _       4       amod    _       _
+4       vaMSa   _       NOUN    _       _       10      nsubj   _       _
+5       usake   _       PRON    _       _       6       nmod    _       _
+6       mAz     _       NOUN    _       _       10      obl     _       _
+7       kI      _       ADP     _       _       6       case    _       _
+8       Ora     _       ADV     _       _       10      advmod  _       _
+9       se      _       ADP     _       _       8       case    _       _
+10      AyA     _       VERB    _       _       0       root    _       _
+11      hE      _       AUX     _       _       10      aux     _       _
+
+
+rAma ne ladake ko xeKA
+1       rAma    _       PROPN   _       _       5       nsubj   _       _
+2       ne      _       ADP     _       _       1       case    _       _
+3       ladake  _       NOUN    _       _       5       obj     _       _
+4       ko      _       ADP     _       _       3       case    _       _
+5       xeKA    _       VERB    _       _       0       root    _       _
+
+
+vaha xakRiNa ke Ora se AyA
+1       vaha    _       PRON    _       _       6       nsubj   _       _
+2       xakRiNa _       PROPN   _       _       4       nmod    _       _
+3       ke      _       ADP     _       _       2       case    _       _
+4       Ora     _       DET     _       _       6       obl     _       _
+5       se      _       ADP     _       _       4       case    _       _
+6       AyA     _       VERB    _       _       0       root    _       _
+===============================================================================================
+advcl vs advmod discussion
 
