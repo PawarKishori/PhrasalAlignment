@@ -459,7 +459,7 @@ In the alignment task, if Hindi parser is doing wrong, then
 --------------------------------------------------------------------------------------------------------------
 10-sept-2018
 Write to do in this file for next day.
-1. Telling sir the issue of why manual sentence is tokenized and not in parser. its in Anusaaraka_alignment.sh : line 82 and ask what to do on this?
+1. Telling sir the issue of why manual sentence is tokenized and not in parser. its in Anusaaraka_alignment.sh : line 82 and ask what to do on this? => Told.
 2. starting doing work in local git directory as well as github-forked. commiting changes of both. 
 3. Integrating tokenizer in parser as one module.
 4. Working for parser clause boundary.
@@ -472,6 +472,11 @@ Write to do in this file for next day.
 9. Talking to sir about my thesis boundary and one deep learning chapter
 10. Clearing the factor of course work. So next semester should be the last one to finalize.
 11. Writing papers in next semester.
+
+
+Daily basis works:
+Debug spell diff match error => miscellaneous/SMT/phrasal_alignment/alignment1.clp and /anusaaraka/miscellaneous/SMT/phrasal_alignment$ vim spellDifference.py
+
 
 
 
