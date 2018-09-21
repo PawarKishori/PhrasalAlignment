@@ -1,7 +1,4 @@
 Anusaaraka Task:
-:q
-:q
-
 Goal of Anusaaraka is to create word aligned parallel corpora using following resourses:
 1. Anusaaraka output
 2. Statistical Machine Translation output.
@@ -456,4 +453,41 @@ vaha xakRiNa ke Ora se AyA
 6       AyA     _       VERB    _       _       0       root    _       _
 ===============================================================================================
 advcl vs advmod discussion
+=================================================================================================
+In the alignment task, if Hindi parser is doing wrong, then 
+
+--------------------------------------------------------------------------------------------------------------
+10-sept-2018
+Write to do in this file for next day.
+1. Telling sir the issue of why manual sentence is tokenized and not in parser. its in Anusaaraka_alignment.sh : line 82 and ask what to do on this? 
+   => Told.
+2. starting doing work in local git directory as well as github-forked. commiting changes of both. 
+   => csnlp, Anusaaraka, alignment and run_log.sh 
+3. Integrating tokenizer in parser as one module.
+   => Done
+4. Working for parser clause boundary.
+	4.1 writing code to generate clause boundary facts
+	4.2 start writing rules using those facts
+4.1 Check the accuracy of the system with and without parser layer.
+5. Deciding all the layers and seggregating the expected outputs for layers and sub-layers.
+6. Modularizing the code.
+6.1 Preparation of documentation.
+7. Deciding the scope of my work
+8. Start writing whatever work I done: i) Practical implementation writing ii) Paper type of writings
+9. Talking to sir about my thesis boundary and one deep learning chapter
+10. Clearing the factor of course work. So next semester should be the last one to finalize.
+11. Writing papers in next semester.this sem
+12. Apply for internships, fellowships etc.
+
+
+Daily basis works:
+1. Debug spell diff match error => miscellaneous/SMT/phrasal_alignment/alignment1.clp and /anusaaraka/miscellaneous/SMT/phrasal_alignment$ vim spellDifference.py
+2. Debug number coming in Pth layer=> align word id with parser id from hindi side, just like did in english in run_module.bat, preprocessing module from stanford side. 
+
+
+
+
+
+
+
 
