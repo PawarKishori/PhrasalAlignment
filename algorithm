@@ -459,21 +459,12 @@ In the alignment task, if Hindi parser is doing wrong, then
 --------------------------------------------------------------------------------------------------------------
 10-sept-2018
 Write to do in this file for next day.
-1. Telling sir the issue of why manual sentence is tokenized and not in parser. its in Anusaaraka_alignment.sh : line 82 and ask what to do on this? 
-   => Told.
-
-2. starting doing work in local git directory as well as github-forked. commiting changes of both.
-   => Created run_log.sh to create local git repo which adds log into /log directory
-   => created git repositories => csnlp(forked from irshad's repo), alignment (it is phrasal_data repo),anusaaraka(forked from anusaaraka/anusaaraka)
-   => Integrated tokenizer in parser, ran files successfully on 20-9-18 and called this new parser in Anusaaraka_alignment.sh => pushed all these in above repositories. 
-
+1. Telling sir the issue of why manual sentence is tokenized and not in parser. its in Anusaaraka_alignment.sh : line 82 and ask what to do on this? => Told.
+2. starting doing work in local git directory as well as github-forked. commiting changes of both. => 
 3. Integrating tokenizer in parser as one module.
-   => Done
-
 4. Working for parser clause boundary.
 	4.1 writing code to generate clause boundary facts
 	4.2 start writing rules using those facts
-
 5. Deciding all the layers and seggregating the expected outputs for layers and sub-layers.
 6. Modularizing the code.
 7. Deciding the scope of my work
