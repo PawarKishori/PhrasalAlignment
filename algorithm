@@ -468,18 +468,21 @@ Write to do in this file for next day.
 4. Working for parser clause boundary.
 	4.1 writing code to generate clause boundary facts
 	4.2 start writing rules using those facts
+4.1 Check the accuracy of the system with and without parser layer.
 5. Deciding all the layers and seggregating the expected outputs for layers and sub-layers.
 6. Modularizing the code.
+6.1 Preparation of documentation.
 7. Deciding the scope of my work
 8. Start writing whatever work I done: i) Practical implementation writing ii) Paper type of writings
 9. Talking to sir about my thesis boundary and one deep learning chapter
 10. Clearing the factor of course work. So next semester should be the last one to finalize.
-11. Writing papers in next semester.
+11. Writing papers in next semester.this sem
+12. Apply for internships, fellowships etc.
 
 
 Daily basis works:
-Debug spell diff match error => miscellaneous/SMT/phrasal_alignment/alignment1.clp and /anusaaraka/miscellaneous/SMT/phrasal_alignment$ vim spellDifference.py
-
+1. Debug spell diff match error => miscellaneous/SMT/phrasal_alignment/alignment1.clp and /anusaaraka/miscellaneous/SMT/phrasal_alignment$ vim spellDifference.py
+2. Debug number coming in Pth layer=> align word id with parser id from hindi side, just like did in english in run_module.bat, preprocessing module from stanford side. 
 
 
 
