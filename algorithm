@@ -466,9 +466,33 @@ Write to do in this file for next day.
 3. Integrating tokenizer in parser as one module.
    => Done
 4. Working for parser clause boundary.
-	4.1 writing code to generate clause boundary facts
-	4.2 start writing rules using those facts
-4.1 Check the accuracy of the system with and without parser layer.
+   4.1 writing code to generate clause boundary facts
+   => Algorithm for generation of facts from English and Hindi dependency parse
+	Objective: Detection and extraction of intrachunk, interchunk, interclause clause boundary of a sentences
+	VVIMP: Before using information from any tool(here parses) try to apply the heuristics on the data and then take help from tool outputs.
+
+	This is to be done seperately. Now I am using only parser output to generate the facts and not any linguistic heuristic or any resource(eg vibhakti etc). So facts from parser will o/p are generated. Similarly, facts only from heuristics and dectionaries will be generated. We will start writing the rules for parser by taking help of these 2 facts which are same but coming from 2 different resource. Whereever there is discrepency in these 2 types of facts we need to rely on heuristics facts than parser one. In this way, we can tackle the problem when our tools are inaccurate. So our code will not break when the parser fails to perform(either parser error or parser unable to go in deep semantics) both drawbacks will be taken care by extra rules written in CLIPS whose basis is parser facts and heuristics facts.
+
+	Algorithm A: Extract english clause facts
+		Inputs: English Parse (in conll format)
+		Output: facts
+	==> Already Done
+	As of now I am using facts from manju mam to extract parser information, I am not going to generate the facts again as there is not yet emergency arrived.
+	
+	Algorithm B: Extract hindi clause facts
+	Inputs:  Hindi Parse (in conll format)
+	
+	==> Done
+
+   4.2 start writing rules using those facts
+	Alignment layers have interdependency on each other in Manju mam's version. The solution over it is, we need to create each layer information and combine it into new Qth layer by applying customized rules.  
+	
+4.3 Check the accuracy of the system with and without parser layer.
+
+Alignment % information is not that reliable measure to measure the alignment accuracy, so we have to involve human users to evaluate the accuracy.
+Interns should get the files to evaluate the difference of alignment, with and without parser.
+$$ To be done by 19th november
+
 5. Deciding all the layers and seggregating the expected outputs for layers and sub-layers.
 6. Modularizing the code.
 6.1 Preparation of documentation.
