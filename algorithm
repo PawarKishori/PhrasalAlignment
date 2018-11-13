@@ -500,6 +500,15 @@ Tasks to be done:
 	500 sentences and their baseline accuracy will be done by Banasthali interns 2018-19(Monsoon batch)
 	check the accuracy of alignment on new alignment algorithm vs old algorithm.
 	
+4.2 (By Sir) Roja and Manju mam are not directly involved to correct the errors or to understand the previous code. So the fast solution on this is creating my own alignment algorithm and which will be responsible for R layer, which will be my replacement of P, and replace Q layer by N.
+Both these will be shown in spreadsheet. I am going to add Q and R layer in existing spreadsheet(which is either extracted directly from html or from dat files, archita's work). 
+Do I need to think about R layer for Q? => No. R layer will be on top of Q layer, you need not to worry about it, but in meeting if some work occurs like integrating NMT (which has again next layers like S, T etc) o/p or integrating Nandani's dictionary, then I need to first create an algorithm to show R layer.
+
+What is needed for Q layer? 
+Input => Q layer will use eng and hindi parser output and dictionaries.
+Output => Qth layer
+
+
 
 Alignment % information is not that reliable measure to measure the alignment accuracy, so we have to involve human users to evaluate the accuracy.
 Interns should get the files to evaluate the difference of alignment, with and without parser.
