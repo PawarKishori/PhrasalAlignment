@@ -539,3 +539,10 @@ clips_tutorial
 clips notes tutorial
 -------------------------------------------------------------
 if total_hindi_verbs==total_eng_verbs=1 then align hindi verb under english verb
+
+-----------------------------------------------------------
+My tasks: 
+1. clips rules for stanford parser, then
+2. Integrating HPSG parser, syntaxnet in alignment
+3. Reading Universal semnatic parser paper and explanaing to sir
+4. Running models on iiit gpu
