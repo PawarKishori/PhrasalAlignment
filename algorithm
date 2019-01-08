@@ -546,3 +546,45 @@ My tasks:
 2. Integrating HPSG parser, syntaxnet in alignment
 3. Reading Universal semnatic parser paper and explanaing to sir
 4. Running models on iiit gpu
+
+
+-----------------
+Task for 9-jan:
+Note on :
+. Sd-lexicalize_info.dat = constituency parse
+29. Ordered_constituents.dat
+30. Node_category.dat
+31. Ordered_constituents.dat
+32. E_constituents_info.dat
+28-32=> are for constituency parse facts
+
+rule for substituting by manju mam's help
+
+use pada_prawiniXI_info.dat to extract small introchunks information
+
+Finally getting small chunks from english using dependency as well as constituency parse.
+
+Getting small chunks from hindi dep parse.
+
+bottom-to-top-align-chunks.clp => use intrachunks from eng and hindi sentence and with help of dictionaries align them.
+
+E-chunkheadid-wordids.dat
+H-chunkheadid-wordids.dat
+dictionary-from-hindi-to-english.dat
+dictionary-from-english-to-hindi.dat ?? ask sir
+
+
+-------------------------------------
+Clips rules for:
+1. bottom-to-top chunk alignment (dictionary usage)
+2. boundary-to-boundary alignment (dictionary usage)
+3. edge-label(relations) postprocessing: semantically going into depth and bring every relation in UD english and UD hindi to anu paninian representation.
+   Eg. xcomp in hindi parse is nothing but kriyamul in anu paninian dependency
+   Eg. conj and cc: chnage the notation into anu panini in both eng and hindi.
+   Eg. copula in hindi and copula in eng => converge them into samAnAXikarana 
+4. mapping of one relation of english to another into hindi . 
+	Eg. ccomp to obj(vakya karma)
+5. Construction change mapping.
+
+-----------------
+
