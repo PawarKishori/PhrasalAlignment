@@ -546,7 +546,11 @@ My tasks:
 2. Integrating HPSG parser, syntaxnet in alignment
 3. Reading Universal semnatic parser paper and explanaing to sir
 4. Running models on iiit gpu
-
+5. Write run_alignment.sh
+	5.1 new algorithm for alignment (stop unnecessary multiple tokenisations, where we need canonical and where(which tool) original?)
+	5.2 call canonical function
+	5.3 call parsers at once for 50 senetnces once and then divide the outputs and keep them in 2.*
+	5.4 solve the WX-charu-issue : Emdash issue(temporary solution replace - -- by --- after tokenization)
 
 -----------------
 Task for 9-jan:
